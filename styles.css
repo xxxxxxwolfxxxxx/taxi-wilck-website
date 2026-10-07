@@ -14,8 +14,9 @@ a{color:inherit}
 h1,h2,h3{font-family:var(--display);font-weight:800;line-height:.98;letter-spacing:-.02em}
 .eyebrow{font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem;color:var(--red)}
 
-header.top{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.5rem var(--pad);background:var(--yellow);border-bottom:4px solid var(--ink)}
-.logo img{display:block;height:clamp(44px,6vw,58px);width:auto}
+header.top{position:sticky;top:0;z-index:50;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.45rem var(--pad);background:var(--yellow);border-bottom:4px solid var(--ink)}
+.logo img{display:block;height:clamp(66px,8.5vw,104px);width:auto}
+.call{display:none}
 nav.main{display:flex;gap:1.6rem;align-items:center}
 nav.main a{text-decoration:none;font-weight:700;font-size:.95rem}
 nav.main a:not(.btn):hover{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:5px}
@@ -115,3 +116,5 @@ footer a{margin-left:1.2rem}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
 
 @media(max-width:420px){header.top .btn{padding:.6rem .8rem;font-size:.85rem}.decal span:last-child{font-size:1.35rem;padding-right:2.2rem}.decal span:first-child{padding:.6rem .7rem}}
+
+@media(max-width:560px){.num{display:none}.call{display:inline}header.top .btn{padding:.6rem .8rem;font-size:.85rem}.logo img{height:58px}header.top{gap:.5rem}}
