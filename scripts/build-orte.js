@@ -128,6 +128,9 @@ ${FOOTER}
 `;
 }
 
+const letter = (o) => o.name.charAt(0).toLocaleUpperCase('de');
+const alpha = (orte) => [...orte].sort((a, b) => a.name.localeCompare(b.name, 'de'));
+
 function renderUebersicht(orte) {
   const canonical = `${BASE}/fahrgebiet/`;
   const title = `Fahrgebiet: Taxi in Hagenow und Umgebung – Taxi Wilck`;
@@ -140,10 +143,13 @@ function renderUebersicht(orte) {
   <span class="eyebrow">Fahrgebiet</span>
   <h1>Fahrgebiet: Taxi in Hagenow und Umgebung.</h1>
   <p class="lead">Von Hagenow aus fahren wir Sie in alle Orte der Umgebung. Wählen Sie Ihren Ort – die Anfrage ist dann schon ausgefüllt.</p>
+  <div data-orte>
   <ul class="orte-liste">
-    <li><a href="/"><strong>Hagenow</strong> <span>Standort</span></a></li>
-    ${orte.map((o) => `<li><a href="${url(o)}"><strong>${esc(o.name)}</strong> <span>${de(o.km)} km · ca. ${o.min} Min.</span></a></li>`).join('\n    ')}
+    <li data-l="H"><a href="/"><strong>Hagenow</strong> <span>Standort</span></a></li>
+    ${alpha(orte).map((o) => `<li data-l="${letter(o)}"><a href="${url(o)}"><strong>${esc(o.name)}</strong> <span>${de(o.km)} km · ca. ${o.min} Min.</span></a></li>`).join('\n    ')}
   </ul>
+  </div>
+  <script src="/orte-filter.js" defer></script>
   <p>Ihr Ort fehlt? Rufen Sie uns an unter <a href="${TEL_HREF}">${TEL}</a>, wir fahren auch darüber hinaus.</p>
 </div></section>
 </main>
@@ -168,7 +174,10 @@ function renderStartseitenBlock(orte) {
   return `<section id="fahrgebiet" aria-labelledby="h-gebiet"><div class="wrap">
   <span class="eyebrow">Fahrgebiet</span>
   <h2 id="h-gebiet">Taxi in Hagenow und in der ganzen Umgebung.</h2>
-  <p class="ortlinks">${orte.map((o) => `<a href="${url(o)}">Taxi ${esc(o.name)}</a>`).join(' · ')}</p>
+  <div data-orte>
+  <p class="ortlinks">${alpha(orte).map((o) => `<a href="${url(o)}" data-l="${letter(o)}"><span class="sr">Taxi </span>${esc(o.name)}</a>`).join(' · ')}</p>
+  </div>
+  <script src="/orte-filter.js" defer></script>
   <p><a class="btn" href="/fahrgebiet/">Alle Orte im Fahrgebiet →</a></p>
 </div></section>`;
 }

@@ -269,3 +269,12 @@ footer a:hover{color:var(--yellow);border-color:var(--yellow)}
   header.top{padding-block:.35rem}
 }
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+/* Schnellauswahl Orte */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.abc{display:flex;flex-wrap:wrap;gap:.4rem;margin:1.4rem 0 0}
+.abc button{font:inherit;font-weight:700;font-size:.92rem;line-height:1;min-width:2.5rem;padding:.6rem .8rem;border:1.5px solid var(--ink);border-radius:999px;background:var(--card);color:var(--ink);cursor:pointer;transition:background .2s,color .2s,transform .2s var(--ease)}
+.abc button:hover{transform:translateY(-2px)}
+.abc button[aria-pressed="true"]{background:var(--ink);color:var(--yellow)}
+.abc+.ortlinks{margin-top:1.2rem}
+[data-l][hidden]{display:none!important}
