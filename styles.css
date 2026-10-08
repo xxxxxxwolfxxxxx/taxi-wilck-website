@@ -87,7 +87,7 @@ section{padding:clamp(3.5rem,7.5vw,6.5rem) var(--pad)}
 .wrap{max-width:1240px;margin:0 auto}
 h2{font-size:clamp(2rem,4.6vw,3.6rem);margin:.7rem 0 1.4rem}
 .eyebrow+h2{margin-top:.8rem}
-.wrap>p+p{margin-top:1rem}.wrap>p:not(.lead):not(.src){max-width:68ch}
+.wrap>p+p{margin-top:1rem}.wrap>p:not(.lead):not(.src):not(.ortlinks){max-width:68ch}
 
 /* Preisrechner-Teaser: dunkle Karte auf hellem Grund */
 .calc-teaser{padding-block:clamp(2.5rem,5vw,4rem) 0}
