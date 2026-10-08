@@ -224,3 +224,12 @@ h2#h-rev{margin-top:0}
   header.top{padding-block:.4rem}
   .calc-teaser .btn{width:100%;justify-content:center}
 }
+
+/* Orts-Landingpages */
+.orte-liste{list-style:none;padding:0;margin:2rem 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:1rem}
+.orte-liste a{display:flex;flex-direction:column;background:var(--paper);border:3px solid var(--ink);border-radius:8px;padding:.8rem 1rem;text-decoration:none;color:var(--ink);box-shadow:5px 5px 0 var(--ink);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+.orte-liste a:hover,.orte-liste a:focus-visible{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--red)}
+.orte-liste span{font-size:.9rem;color:var(--grey)}
+.steps h3{font-size:clamp(1.25rem,2.2vw,1.6rem);margin:1.5rem 0 .3rem}
+.steps h3+p{max-width:60ch}
+.ortlinks a{font-weight:700;color:var(--ink)}

@@ -1,0 +1,340 @@
+[
+  {
+    "name": "Steegen",
+    "slug": "steegen",
+    "lat": 53.4041656,
+    "lon": 11.1683924,
+    "ortsteile": [],
+    "km": 2.9,
+    "min": 4
+  },
+  {
+    "name": "Pätow",
+    "slug": "paetow",
+    "lat": 53.3992736,
+    "lon": 11.1388839,
+    "ortsteile": [
+      "Gramnitz"
+    ],
+    "km": 4.9,
+    "min": 6
+  },
+  {
+    "name": "Toddin",
+    "slug": "toddin",
+    "lat": 53.4174194,
+    "lon": 11.1338741,
+    "ortsteile": [
+      "Granzin",
+      "Grünhof",
+      "Körchow",
+      "Schwaberow"
+    ],
+    "km": 5.5,
+    "min": 7
+  },
+  {
+    "name": "Warlitz",
+    "slug": "warlitz",
+    "lat": 53.3795052,
+    "lon": 11.1496139,
+    "ortsteile": [
+      "Bandekow",
+      "Knebelstorf",
+      "Neuenrode"
+    ],
+    "km": 6.2,
+    "min": 8
+  },
+  {
+    "name": "Kirch Jesar",
+    "slug": "kirch-jesar",
+    "lat": 53.4410741,
+    "lon": 11.2780779,
+    "ortsteile": [
+      "Neu Klüß"
+    ],
+    "km": 7.2,
+    "min": 8
+  },
+  {
+    "name": "Kuhstorf",
+    "slug": "kuhstorf",
+    "lat": 53.3832987,
+    "lon": 11.2499916,
+    "ortsteile": [
+      "Eichhof",
+      "Niels"
+    ],
+    "km": 7.3,
+    "min": 10
+  },
+  {
+    "name": "Bobzin",
+    "slug": "bobzin",
+    "lat": 53.4794503,
+    "lon": 11.1475331,
+    "ortsteile": [
+      "Harst",
+      "Helm",
+      "Klein Wolde",
+      "Presek",
+      "Scharbow",
+      "Woldersee",
+      "Woldmühle",
+      "Zapel"
+    ],
+    "km": 8.4,
+    "min": 11
+  },
+  {
+    "name": "Bandenitz",
+    "slug": "bandenitz",
+    "lat": 53.4910887,
+    "lon": 11.2806585,
+    "ortsteile": [
+      "Radelübbe",
+      "Viez"
+    ],
+    "km": 10.4,
+    "min": 11
+  },
+  {
+    "name": "Moraas",
+    "slug": "moraas",
+    "lat": 53.4165636,
+    "lon": 11.3010067,
+    "ortsteile": [],
+    "km": 10.7,
+    "min": 12
+  },
+  {
+    "name": "Pritzier",
+    "slug": "pritzier",
+    "lat": 53.3795844,
+    "lon": 11.0798014,
+    "ortsteile": [
+      "Clausenheim",
+      "Goldenitz",
+      "Setzin"
+    ],
+    "km": 11.5,
+    "min": 12
+  },
+  {
+    "name": "Gammelin",
+    "slug": "gammelin",
+    "lat": 53.511943,
+    "lon": 11.2425569,
+    "ortsteile": [
+      "Bakendorf",
+      "Hülseburg",
+      "Mühlenbeck"
+    ],
+    "km": 11.7,
+    "min": 16
+  },
+  {
+    "name": "Redefin",
+    "slug": "redefin",
+    "lat": 53.3485068,
+    "lon": 11.2008151,
+    "ortsteile": [
+      "Gößlow"
+    ],
+    "km": 12.8,
+    "min": 13
+  },
+  {
+    "name": "Bresegard bei Picher",
+    "slug": "bresegard-bei-picher",
+    "lat": 53.3490225,
+    "lon": 11.2979801,
+    "ortsteile": [
+      "Hufe",
+      "Langen Jammer"
+    ],
+    "km": 12.9,
+    "min": 16
+  },
+  {
+    "name": "Strohkirchen",
+    "slug": "strohkirchen",
+    "lat": 53.3961707,
+    "lon": 11.3160281,
+    "ortsteile": [
+      "Jasnitz"
+    ],
+    "km": 13.9,
+    "min": 16
+  },
+  {
+    "name": "Neu Zachun",
+    "slug": "neu-zachun",
+    "lat": 53.4778365,
+    "lon": 11.3207397,
+    "ortsteile": [],
+    "km": 14,
+    "min": 16
+  },
+  {
+    "name": "Warsow",
+    "slug": "warsow",
+    "lat": 53.5309036,
+    "lon": 11.3028869,
+    "ortsteile": [
+      "Besendorf",
+      "Lehmkuhlen",
+      "Sudenmühle"
+    ],
+    "km": 15.2,
+    "min": 17
+  },
+  {
+    "name": "Belsch",
+    "slug": "belsch",
+    "lat": 53.3280394,
+    "lon": 11.2035229,
+    "ortsteile": [
+      "Lübbendorf",
+      "Probst Jesar",
+      "Ramm"
+    ],
+    "km": 15.5,
+    "min": 18
+  },
+  {
+    "name": "Picher",
+    "slug": "picher",
+    "lat": 53.3493019,
+    "lon": 11.3461621,
+    "ortsteile": [],
+    "km": 16.1,
+    "min": 19
+  },
+  {
+    "name": "Alt Zachun",
+    "slug": "alt-zachun",
+    "lat": 53.4951805,
+    "lon": 11.3379402,
+    "ortsteile": [],
+    "km": 16.7,
+    "min": 19
+  },
+  {
+    "name": "Hoort",
+    "slug": "hoort",
+    "lat": 53.4825918,
+    "lon": 11.3610286,
+    "ortsteile": [],
+    "km": 16.8,
+    "min": 19
+  },
+  {
+    "name": "Kothendorf",
+    "slug": "kothendorf",
+    "lat": 53.5457356,
+    "lon": 11.2836889,
+    "ortsteile": [
+      "Krumbeck"
+    ],
+    "km": 17.4,
+    "min": 19
+  },
+  {
+    "name": "Groß Krams",
+    "slug": "gross-krams",
+    "lat": 53.3332555,
+    "lon": 11.266353,
+    "ortsteile": [],
+    "km": 17.6,
+    "min": 18
+  },
+  {
+    "name": "Parum",
+    "slug": "parum",
+    "lat": 53.5472295,
+    "lon": 11.1887285,
+    "ortsteile": [
+      "Schossin"
+    ],
+    "km": 18.9,
+    "min": 24
+  },
+  {
+    "name": "Vellahn",
+    "slug": "vellahn",
+    "lat": 53.3980629,
+    "lon": 10.968834,
+    "ortsteile": [
+      "Albertinenhof",
+      "Friedrichshof",
+      "Goldenbow",
+      "Kloddram",
+      "Kützin",
+      "Zühr"
+    ],
+    "km": 20,
+    "min": 21
+  },
+  {
+    "name": "Melkof",
+    "slug": "melkof",
+    "lat": 53.361775,
+    "lon": 11.0228022,
+    "ortsteile": [
+      "Brömsenberg",
+      "Jesow",
+      "Langenheide",
+      "Quassel"
+    ],
+    "km": 21,
+    "min": 23
+  },
+  {
+    "name": "Kraak",
+    "slug": "kraak",
+    "lat": 53.4504152,
+    "lon": 11.3841185,
+    "ortsteile": [],
+    "km": 21.3,
+    "min": 23
+  },
+  {
+    "name": "Alt Krenzlin",
+    "slug": "alt-krenzlin",
+    "lat": 53.3191132,
+    "lon": 11.3093581,
+    "ortsteile": [],
+    "km": 21.9,
+    "min": 22
+  },
+  {
+    "name": "Wittenburg",
+    "slug": "wittenburg",
+    "lat": 53.505962,
+    "lon": 11.084783,
+    "ortsteile": [
+      "Lehsen",
+      "Perdöhl",
+      "Wölzow",
+      "Wulfskuhl",
+      "Ziggelmark"
+    ],
+    "km": 22.9,
+    "min": 20
+  },
+  {
+    "name": "Dreilützow",
+    "slug": "dreiluetzow",
+    "lat": 53.5343011,
+    "lon": 11.1112768,
+    "ortsteile": [
+      "Luckwitz",
+      "Pogreß",
+      "Püttelkow"
+    ],
+    "km": 26.7,
+    "min": 24
+  }
+]
