@@ -78,10 +78,10 @@ function zieltabelle(o, info, ziele) {
   const rows = ziele.map((z) => {
     const r = info.ziele[z.id];
     const preis = z.pflicht ? `ca. ${preisTag(r.km)}&nbsp;€` : 'Preis vor Fahrtantritt';
-    return `<tr><th scope="row">${esc(z.name)}</th><td>${de(r.km)} km</td><td>ca. ${r.min} Min.</td><td>${preis}</td></tr>`;
+    return `<tr><th scope="row">${esc(z.name)}</th><td data-label="Strecke">${de(r.km)} km</td><td data-label="Fahrzeit">ca. ${r.min} Min.</td><td data-label="Tagtarif">${preis}</td></tr>`;
   }).join('\n      ');
   return `<h3>Typische Fahrten ab ${esc(o.name)}</h3>
-  <table class="ex"><thead><tr><th scope="col">Ziel</th><th scope="col">Strecke</th><th scope="col">Fahrzeit</th><th scope="col">Tagtarif</th></tr></thead><tbody>
+  <table class="ex ziele"><thead><tr><th scope="col">Ziel</th><th scope="col">Strecke</th><th scope="col">Fahrzeit</th><th scope="col">Tagtarif</th></tr></thead><tbody>
       ${rows}</tbody></table>
   <p class="small">Preise nach dem Taxitarif (Tagtarif, ohne Zuschläge und Wartezeit). Schwerin liegt außerhalb unseres Pflichtfahrgebiets, dort nennen wir Ihnen den Preis vor Fahrtantritt.</p>`;
 }

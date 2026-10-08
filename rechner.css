@@ -36,3 +36,15 @@ thead th{background:var(--ink);color:var(--yellow);border-bottom:0}
 .cards h3{margin:0 0 .6rem;font-size:1.35rem}.cards ul{padding-left:1.1rem;display:grid;gap:.5rem}.cards p,.cards li{font-size:.98rem;color:var(--grey)}.cards strong{color:var(--ink)}
 .source{margin-top:3rem;padding:1.4rem 1.6rem;border-left:6px solid var(--red);border-radius:0 var(--r-m) var(--r-m) 0;background:var(--card);box-shadow:var(--sh-s)}.source h3{margin:0 0 .6rem;font-size:1.3rem}.source p{font-size:.92rem;color:var(--grey);margin-bottom:.6rem}.source a{font-weight:700;color:var(--ink)}
 @media(max-width:860px){.calc-grid,.info .tables,.cards{grid-template-columns:1fr}.calc .two{grid-template-columns:1fr}td{white-space:normal}}
+
+/* Zieltabelle auf Ortsseiten: auf dem Handy als gestapelte Zeilen */
+@media(max-width:600px){
+  .ziele,.ziele tbody,.ziele tr{display:block}
+  .ziele thead{display:none}
+  .ziele tr{padding:.8rem 1rem;border-bottom:1px solid var(--line)}
+  .ziele tr:last-child{border:0}
+  .ziele th,.ziele td{border:0;padding:0}
+  .ziele th{display:block;margin-bottom:.35rem;font-size:1.05rem}
+  .ziele td{display:flex;justify-content:space-between;gap:1rem;padding:.12rem 0;font-weight:600;white-space:normal;text-align:right}
+  .ziele td::before{content:attr(data-label);font-weight:500;color:var(--grey);text-align:left}
+}
