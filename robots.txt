@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /docs/
+Disallow: /scripts/
+Disallow: /tests/
 
 Sitemap: https://www.taxi-wilck.de/sitemap.xml
