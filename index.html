@@ -17,9 +17,23 @@
 <section class="hero" style="padding:0" aria-labelledby="h1">
   <img src="img/flotte-1600.jpg" srcset="img/flotte-1000.jpg 900w, img/flotte-1600.jpg 1600w, img/flotte.jpg 3600w" sizes="100vw" width="3600" height="1537" alt="Taxi Wilck: silberner Großraumbus und beiges Taxi vor Wolkenhimmel" fetchpriority="high">
   <div class="in">
-    <h1 id="h1">Taxi in Hagenow – <b>mit dem Doppel-W.</b></h1>
-    <p>Pünktlich und zuverlässig – seit über 30 Jahren in und um Hagenow.</p>
-    <div><a class="decal" href="tel:03883723240" aria-label="Jetzt anrufen: 03883 723240"><span>Tel.</span><span>03883 72 32 40</span></a><a class="sub-cta" href="#kontakt">oder schreiben Sie uns →</a></div>
+    <div class="hero-txt">
+      <h1 id="h1">Taxi in Hagenow – <b>mit dem Doppel-W.</b></h1>
+      <p>Pünktlich und zuverlässig – seit über 30 Jahren in und um Hagenow.</p>
+      <div><a class="decal" href="tel:03883723240" aria-label="Jetzt anrufen: 03883 723240"><span>Tel.</span><span>03883 72 32 40</span></a></div>
+    </div>
+    <form class="ride" id="fahrt" name="fahrt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html" aria-labelledby="h-ride">
+      <h2 id="h-ride">Fahrt anfragen</h2>
+      <input type="hidden" name="form-name" value="fahrt">
+      <p class="hp"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
+      <div class="two"><label>Name*<input name="name" required autocomplete="name"></label><label>Telefon*<input name="telefon" type="tel" required autocomplete="tel"></label></div>
+      <label>Abholort*<input name="abholort" required autocomplete="street-address" placeholder="Straße, Ort"></label>
+      <label>Ziel*<input name="ziel" required placeholder="Adresse, Klinik, Bahnhof, Flughafen …"></label>
+      <div class="three"><label>Datum*<input name="datum" type="date" required id="d"></label><label>Uhrzeit*<input name="uhrzeit" type="time" required></label><label>Pers.*<input name="personen" type="number" min="1" max="8" value="1" required aria-label="Personenzahl"></label></div>
+      <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich habe die <a href="datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
+      <button class="btn red" type="submit">Fahrt anfragen →</button>
+      <p class="note">Unverbindliche Anfrage – wir bestätigen telefonisch.</p>
+    </form>
   </div>
 </section>
 <div class="facts" role="list">
@@ -27,6 +41,26 @@
   <div role="listitem"><strong>Bis 8 Personen</strong><span>Großraumtransporte</span></div>
   <div role="listitem"><strong>Alle Kassen</strong><span>Krankenfahrten aller Krankenkassen</span></div>
 </div>
+
+
+<section class="steps" id="ablauf" aria-labelledby="h-steps"><div class="wrap">
+  <span class="eyebrow">So einfach geht's</span>
+  <h2 id="h-steps">In drei Schritten zur Fahrt.</h2>
+  <ol class="stepgrid">
+    <li class="rv"><span class="no">1</span><h3>Anfragen</h3><p>Rufen Sie uns an unter <a href="tel:03883723240">03883 723240</a> oder senden Sie die Anfrage oben ab.</p></li>
+    <li class="rv"><span class="no">2</span><h3>Wir bestätigen</h3><p>Wir melden uns bei Ihnen und stimmen Zeit und Abholort ab.</p></li>
+    <li class="rv"><span class="no">3</span><h3>Wir holen Sie ab</h3><p>Pünktlich vor Ihrer Tür – und sicher ans Ziel.</p></li>
+  </ol>
+</div></section>
+
+<section class="fleet" id="fahrzeuge" aria-labelledby="h-fleet"><div class="wrap">
+  <span class="eyebrow">Unsere Fahrzeuge</span>
+  <h2 id="h-fleet">Das passende Fahrzeug für jede Fahrt.</h2>
+  <div class="cars">
+    <article class="car rv"><div class="shot taxi" role="img" aria-label="Taxi von Taxi Wilck"></div><div class="body"><h3>Taxi</h3><p>Für Krankenfahrten, Flughafen- und Bahntransfer, Schul- und Kindergartenfahrten und alle Fahrten in und um Hagenow.</p><a class="btn" href="#fahrt">Taxi anfragen →</a></div></article>
+    <article class="car rv"><div class="shot van" role="img" aria-label="Großraumbus von Taxi Wilck"></div><div class="body"><h3>Großraumbus</h3><p>Großraumtransporte bis 8 Personen – für Gruppen, Familien und Fahrten mit mehr Gepäck.</p><a class="btn" href="#fahrt">Bus anfragen →</a></div></article>
+  </div>
+</div></section>
 
 <section id="leistungen" aria-labelledby="h-leist"><div class="wrap">
   <span class="eyebrow">Unser Angebot</span>
@@ -79,6 +113,7 @@
 </main>
 <footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutzrichtlinie</a></span></footer>
 <script>
+const d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);
 document.getElementById('y').textContent=new Date().getFullYear();
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%2)*100+'ms';io.observe(el)});

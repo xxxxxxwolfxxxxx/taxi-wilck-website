@@ -31,7 +31,7 @@ nav.main a:not(.btn):hover{text-decoration:underline;text-decoration-thickness:3
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%;z-index:-2;animation:zoom 14s ease-out both}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(0,0,0,.05) 25%,rgba(0,0,0,.78) 100%)}
 @keyframes zoom{from{transform:scale(1.08)}}
-.hero .in{padding:clamp(2rem,6vw,5rem) var(--pad);max-width:1400px;width:100%;margin:0 auto}
+.hero .in{padding:clamp(2rem,6vw,5rem) var(--pad);max-width:1400px;width:100%;margin:0 auto;display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(1.5rem,4vw,4rem);align-items:end}
 .hero h1{font-size:clamp(3rem,9vw,8.5rem);max-width:12ch;text-shadow:0 3px 30px rgba(0,0,0,.4)}
 .hero h1 b{color:var(--yellow)}
 .hero p{font-size:clamp(1.15rem,1rem + 1vw,1.7rem);max-width:30ch;margin:1.2rem 0 1.8rem}
@@ -102,7 +102,7 @@ footer a{margin-left:1.2rem}
 
 .rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .rv.in{opacity:1;transform:none}
-.hero .in>*{animation:rise .9s var(--ease) both}.hero .in>*:nth-child(2){animation-delay:.12s}.hero .in>*:nth-child(3){animation-delay:.24s}
+.hero .in>*{animation:rise .9s var(--ease) both}.hero .in>*:nth-child(2){animation-delay:.2s}
 @keyframes rise{from{opacity:0;transform:translateY(36px)}}
 
 @media(max-width:860px){
@@ -118,3 +118,43 @@ footer a{margin-left:1.2rem}
 @media(max-width:420px){header.top .btn{padding:.6rem .8rem;font-size:.85rem}.decal span:last-child{font-size:1.35rem;padding-right:2.2rem}.decal span:first-child{padding:.6rem .7rem}}
 
 @media(max-width:560px){.num{display:none}.call{display:inline}header.top .btn{padding:.6rem .8rem;font-size:.85rem}.logo img{height:58px}header.top{gap:.5rem}}
+
+/* Anfrage-Formular im Hero */
+.ride{background:var(--yellow);color:var(--ink);border:4px solid var(--ink);border-radius:8px;box-shadow:10px 10px 0 rgba(0,0,0,.55);padding:clamp(1.1rem,2.4vw,1.8rem);display:grid;gap:.75rem}
+.ride h2{font-size:clamp(1.7rem,3vw,2.3rem);margin:0 0 .2rem}
+.ride .two{display:grid;grid-template-columns:1fr 1fr;gap:.75rem}.ride .three{display:grid;grid-template-columns:1.5fr 1fr .8fr;gap:.6rem}.ride .three input{padding-inline:.5rem}
+.ride label{font-size:.85rem}
+.ride input{padding:.65rem .8rem}
+.ride .btn{justify-content:center;cursor:pointer;font-family:inherit;font-size:1.1rem}
+.ride .note{font-size:.82rem;font-weight:600;text-align:center}
+.ride .consent{font-size:.8rem}
+
+/* Schritte */
+.steps{background:var(--yellow);border-block:4px solid var(--ink)}
+.stepgrid{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,3vw,2.5rem);margin-top:2.5rem;counter-reset:s}
+.stepgrid li{position:relative;background:var(--paper);border:4px solid var(--ink);border-radius:8px;padding:2.6rem 1.6rem 1.6rem;box-shadow:8px 8px 0 var(--ink)}
+.stepgrid li:not(:last-child)::after{content:"";position:absolute;right:calc(clamp(1rem,3vw,2.5rem)/-1 - 4px);top:50%;width:clamp(1rem,3vw,2.5rem);height:18px;transform:translateY(-50%);background:var(--red);clip-path:polygon(0 30%,55% 30%,55% 0,100% 50%,55% 100%,55% 70%,0 70%)}
+.stepgrid .no{position:absolute;left:1.4rem;top:-1.5rem;width:3rem;height:3rem;border-radius:50%;background:var(--red);color:#fff;border:4px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.5rem}
+.stepgrid h3{font-size:clamp(1.5rem,2.6vw,2rem);margin-bottom:.5rem}
+.stepgrid p{color:var(--grey);font-size:1rem;line-height:1.5}
+.stepgrid a{font-weight:700;color:var(--ink)}
+
+/* Fahrzeuge */
+.cars{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.2rem,3vw,2.5rem);margin-top:2.5rem}
+.car{background:#fff;border:4px solid var(--ink);border-radius:8px;box-shadow:10px 10px 0 var(--ink);overflow:hidden;display:flex;flex-direction:column}
+.car .shot{aspect-ratio:16/10;background:url(img/flotte-1600.jpg) no-repeat;background-color:#bcd6f0;border-bottom:4px solid var(--ink);transition:background-size .6s var(--ease)}
+.car .shot.taxi{background-size:210% auto;background-position:96% 78%}
+.car .shot.van{background-size:215% auto;background-position:2% 62%}
+.car:hover .shot.taxi{background-size:225% auto}.car:hover .shot.van{background-size:230% auto}
+.car .body{padding:1.5rem;display:flex;flex-direction:column;gap:.8rem;align-items:flex-start;flex:1}
+.car h3{font-size:clamp(1.8rem,3vw,2.5rem)}
+.car p{color:var(--grey);flex:1}
+
+@media(max-width:860px){
+  .hero .in{grid-template-columns:1fr}
+  .ride{box-shadow:6px 6px 0 rgba(255,255,255,.18)}
+  .stepgrid,.cars{grid-template-columns:1fr}
+  .stepgrid li:not(:last-child)::after{right:auto;left:50%;top:auto;bottom:-2.3rem;transform:translateX(-50%) rotate(90deg)}
+  .stepgrid{gap:2.6rem}
+}
+@media(max-width:420px){.ride .two{grid-template-columns:1fr 1fr}.ride{padding:1rem}}
