@@ -10,7 +10,7 @@ werden lokal erzeugt und mitcommittet.
 | `node scripts/build-orte.js` | `taxi-<ort>/`, `fahrgebiet/`, `sitemap.xml` erzeugen, Header/Footer in `index.html` und `preisrechner.html` einsetzen |
 
 Header und Footer: `scripts/templates/header.html` bzw. `footer.html` ändern, dann `build-orte.js` ausführen.
-Tests (aus dem Ordner darüber): `node --test tests/`
+Tests: `npm test` (Node ≥ 20, keine Abhängigkeiten) · Link-/Meta-Prüfung: `npm run audit` · Ortsseiten neu erzeugen: `npm run build` · lokal ansehen: `npm run serve` (http://localhost:8099)
 
 ## Sprachen
 

@@ -1,0 +1,12 @@
+{
+  "name": "taxi-wilck-website",
+  "private": true,
+  "description": "Statische Website Taxi Wilck Hagenow (Netlify). Keine Laufzeit-Abhängigkeiten.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "build": "node scripts/build-orte.js",
+    "test": "node --test tests/",
+    "audit": "node scripts/audit-links.js",
+    "serve": "python3 -m http.server 8099"
+  }
+}
