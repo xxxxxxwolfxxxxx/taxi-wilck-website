@@ -284,3 +284,4 @@ footer a:hover{color:var(--yellow);border-color:var(--yellow)}
 .abc button[aria-pressed="true"]{background:var(--ink);color:var(--yellow)}
 .abc+.ortlinks{margin-top:1.2rem}
 [data-l][hidden]{display:none!important}
+section>.wrap>h3{font-size:clamp(1.3rem,2.2vw,1.6rem);margin:2.2rem 0 .9rem}

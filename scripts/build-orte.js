@@ -48,21 +48,53 @@ const breadcrumb = (items) => ({
   itemListElement: items.map(([name, href], i) => ({ '@type': 'ListItem', position: i + 1, name, item: BASE + href })),
 });
 
+const DATEN = path.join(__dirname, 'ortsinfos.json');
+const preisTag = (km) => de(T.fare({ km, tarif: 'tag' }).total, 2);
+
+/** Einleitungssatz aus geprüften Daten (Wikipedia/Wikidata); leer, wenn nichts gesichert ist. */
+function herkunft(o, info) {
+  if (!info || !info.gemeinde) return '';
+  const amt = info.amt ? ` im Amt ${info.amt}` : '';
+  if (info.gemeinde !== o.name) return `${o.name} gehört zur Gemeinde ${info.gemeinde}${amt}.`;
+  const ew = info.einwohner ? ` mit rund ${info.einwohner.n.toLocaleString('de-DE')} Einwohnern (Stand ${info.einwohner.jahr})` : '';
+  return `${o.name} ist ${o.name === 'Wittenburg' ? 'eine Stadt' : 'eine Gemeinde'}${amt}${ew}.`;
+}
+
 /** Fragen/Antworten pro Ort – Text und Schema kommen aus derselben Quelle. */
-function faq(o) {
-  const preis = de(T.fare({ km: o.km, tarif: 'tag' }).total, 2);
-  return [
+function faq(o, info, ziele) {
+  const qa = [
     [`Wie bestelle ich ein Taxi in ${o.name}?`, `Rufen Sie uns unter ${TEL} an oder senden Sie die Fahrtanfrage oben auf dieser Seite. Der Abholort ${o.name} ist bereits eingetragen. Wir bestätigen telefonisch.`],
     [`Wie weit ist es von ${o.name} nach Hagenow?`, `Die Fahrstrecke zwischen ${o.name} und unserem Standort in Hagenow beträgt etwa ${de(o.km)} km, die Fahrzeit rund ${o.min} Minuten.`],
-    [`Was kostet eine Taxifahrt von ${o.name} nach Hagenow?`, `Nach dem Taxitarif (Tagtarif, ohne Zuschläge und Wartezeit) rund ${preis} € für etwa ${de(o.km)} km. Den Preis für Ihre genaue Strecke zeigt der Preisrechner.`],
-    [`Fahren Sie in ${o.name} auch Krankenfahrten?`, `Ja, wir fahren Krankenfahrten für alle Krankenkassen, außerdem Kur- und Rehafahrten, Fahrten zur Chemo- und Bestrahlungstherapie sowie Behindertentransporte.`],
+    [`Was kostet eine Taxifahrt von ${o.name} nach Hagenow?`, `Nach dem Taxitarif (Tagtarif, ohne Zuschläge und Wartezeit) rund ${preisTag(o.km)} € für etwa ${de(o.km)} km. Den Preis für Ihre genaue Strecke zeigt der Preisrechner.`],
+  ];
+  const z = info && info.ziele;
+  if (!z || !z.bahnhof || !z.klinik || !z.schwerin) {
+    return [...qa, [`Fahren Sie in ${o.name} auch Krankenfahrten?`, 'Ja, wir fahren Krankenfahrten für alle Krankenkassen, außerdem Kur- und Rehafahrten, Fahrten zur Chemo- und Bestrahlungstherapie sowie Behindertentransporte.']];
+  }
+  return [...qa,
+    [`Wie komme ich von ${o.name} zum Bahnhof Hagenow?`, `Zum Bahnhof Hagenow Land sind es ab ${o.name} etwa ${de(z.bahnhof.km)} km, die Fahrt dauert rund ${z.bahnhof.min} Minuten und kostet nach dem Tagtarif etwa ${preisTag(z.bahnhof.km)} €. Bestellen Sie das Taxi gern vorab unter ${TEL}.`],
+    [`Fahren Sie in ${o.name} auch Krankenfahrten?`, `Ja, für alle Krankenkassen. Zum Klinikum Hagenow sind es ab ${o.name} etwa ${de(z.klinik.km)} km (rund ${z.klinik.min} Minuten), zu den Helios Kliniken Schwerin etwa ${de(z.schwerin.km)} km (rund ${z.schwerin.min} Minuten). Wir fahren außerdem Kur- und Rehafahrten, Fahrten zur Chemo- und Bestrahlungstherapie sowie Behindertentransporte.`],
   ];
 }
 
-function renderOrt(o, orte) {
+/** Tabelle „Typische Fahrten ab <Ort>“ – Preis nur für Ziele im Pflichtfahrgebiet, sonst Preis vor Fahrtantritt. */
+function zieltabelle(o, info, ziele) {
+  if (!info || !ziele || !ziele.every((z) => info.ziele && info.ziele[z.id])) return '';
+  const rows = ziele.map((z) => {
+    const r = info.ziele[z.id];
+    const preis = z.pflicht ? `ca. ${preisTag(r.km)}&nbsp;€` : 'Preis vor Fahrtantritt';
+    return `<tr><th scope="row">${esc(z.name)}</th><td>${de(r.km)} km</td><td>ca. ${r.min} Min.</td><td>${preis}</td></tr>`;
+  }).join('\n      ');
+  return `<h3>Typische Fahrten ab ${esc(o.name)}</h3>
+  <table class="ex"><thead><tr><th scope="col">Ziel</th><th scope="col">Strecke</th><th scope="col">Fahrzeit</th><th scope="col">Tagtarif</th></tr></thead><tbody>
+      ${rows}</tbody></table>
+  <p class="small">Preise nach dem Taxitarif (Tagtarif, ohne Zuschläge und Wartezeit). Schwerin liegt außerhalb unseres Pflichtfahrgebiets, dort nennen wir Ihnen den Preis vor Fahrtantritt.</p>`;
+}
+
+function renderOrt(o, orte, info = null, ziele = null) {
   const canonical = `${BASE}${url(o)}`;
-  const preis = de(T.fare({ km: o.km, tarif: 'tag' }).total, 2);
-  const qa = faq(o);
+  const preis = preisTag(o.km);
+  const qa = faq(o, info, ziele);
   const near = nearby(o, orte);
   const title = `Taxi ${o.name} – Wilck ab Hagenow, Tel. ${TEL}`;
   const desc = `Taxi in ${o.name}: Taxi Wilck aus Hagenow holt Sie ab – Krankenfahrten aller Kassen, Flughafen- und Bahntransfer, Großraumtaxi bis 8 Personen. Tel. ${TEL}.`;
@@ -73,7 +105,9 @@ function renderOrt(o, orte) {
   ];
   const teile = o.ortsteile.length
     ? `<p>Wir fahren auch in den umliegenden Ortsteilen und Weilern: ${esc(joinDe(o.ortsteile))}.</p>` : '';
-  return `${head({ title, desc, canonical, schema })}
+  const her = herkunft(o, info);
+  const tabelle = zieltabelle(o, info, ziele);
+  return `${head({ title, desc, canonical, schema, css: tabelle ? ['/rechner.css'] : [] })}
 <main id="main">
 <section class="hero" style="padding:0" aria-labelledby="h1">
   <img src="/img/flotte-1600.jpg" srcset="/img/flotte-1000.jpg 900w, /img/flotte-1600.jpg 1600w, /img/flotte.jpg 3600w" sizes="100vw" width="3600" height="1537" alt="Taxi Wilck: silberner Großraumbus und beiges Taxi vor Wolkenhimmel" fetchpriority="high">
@@ -106,9 +140,10 @@ function renderOrt(o, orte) {
 <section aria-labelledby="h-ort"><div class="wrap">
   <span class="eyebrow">Taxi ${esc(o.name)}</span>
   <h2 id="h-ort">Ihr Taxi in ${esc(o.name)} und Umgebung.</h2>
-  <p>${esc(o.name)} liegt etwa ${de(o.km)} km (rund ${o.min} Minuten Fahrt) von unserem Standort in Hagenow entfernt. Ob Krankenfahrt, Bahn- oder Flughafentransfer, Schulweg oder Gruppenfahrt: Rufen Sie uns an unter <a href="${TEL_HREF}">${TEL}</a>, wir kümmern uns.</p>
+  <p>${her ? esc(her) + ' ' : ''}${esc(o.name)} liegt etwa ${de(o.km)} km (rund ${o.min} Minuten Fahrt) von unserem Standort in Hagenow entfernt. Ob Krankenfahrt, Bahn- oder Flughafentransfer, Schulweg oder Gruppenfahrt: Rufen Sie uns an unter <a href="${TEL_HREF}">${TEL}</a>, wir kümmern uns.</p>
   ${teile}
   <p>Eine Fahrt zwischen ${esc(o.name)} und Hagenow kostet nach dem Taxitarif rund <strong>${preis}&nbsp;€</strong> (Tagtarif, ohne Zuschläge und Wartezeit). Den Preis für Ihre genaue Strecke zeigt der <a href="/preisrechner.html">Preisrechner</a>.</p>
+  ${tabelle}
 </div></section>
 
 <section class="steps" aria-labelledby="h-faq"><div class="wrap">
@@ -190,7 +225,8 @@ function injectStartseite(html, orte) {
 
 function build() {
   const orte = JSON.parse(fs.readFileSync(path.join(__dirname, 'orte.json'), 'utf8'));
-  for (const o of orte) write(`taxi-${o.slug}/index.html`, renderOrt(o, orte));
+  const daten = fs.existsSync(DATEN) ? JSON.parse(fs.readFileSync(DATEN, 'utf8')) : { ziele: null, orte: {} };
+  for (const o of orte) write(`taxi-${o.slug}/index.html`, renderOrt(o, orte, daten.orte[o.slug], daten.ziele));
   const idx = path.join(ROOT, 'index.html');
   fs.writeFileSync(idx, injectStartseite(fs.readFileSync(idx, 'utf8'), orte));
   write('fahrgebiet/index.html', renderUebersicht(orte));

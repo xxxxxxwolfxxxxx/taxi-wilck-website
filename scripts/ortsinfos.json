@@ -1,0 +1,641 @@
+{
+ "ziele": [
+  {
+   "id": "bahnhof",
+   "name": "Bahnhof Hagenow Land",
+   "lat": 53.4134,
+   "lon": 11.2153,
+   "pflicht": true
+  },
+  {
+   "id": "klinik",
+   "name": "Klinikum Hagenow",
+   "lat": 53.4343,
+   "lon": 11.1818,
+   "pflicht": true
+  },
+  {
+   "id": "schwerin",
+   "name": "Helios Kliniken Schwerin",
+   "lat": 53.6515,
+   "lon": 11.4085,
+   "pflicht": false
+  }
+ ],
+ "orte": {
+  "steegen": {
+   "gemeinde": "Pätow-Steegen",
+   "amt": "Hagenow-Land",
+   "einwohner": null,
+   "ziele": {
+    "bahnhof": {
+     "km": 5.8,
+     "min": 9
+    },
+    "klinik": {
+     "km": 4.3,
+     "min": 7
+    },
+    "schwerin": {
+     "km": 38.1,
+     "min": 44
+    }
+   }
+  },
+  "paetow": {
+   "gemeinde": "Pätow-Steegen",
+   "amt": "Hagenow-Land",
+   "einwohner": null,
+   "ziele": {
+    "bahnhof": {
+     "km": 7.8,
+     "min": 11
+    },
+    "klinik": {
+     "km": 6.8,
+     "min": 9
+    },
+    "schwerin": {
+     "km": 40.1,
+     "min": 46
+    }
+   }
+  },
+  "toddin": {
+   "gemeinde": "Toddin",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 872,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 7.9,
+     "min": 11
+    },
+    "klinik": {
+     "km": 4.4,
+     "min": 6
+    },
+    "schwerin": {
+     "km": 40.2,
+     "min": 47
+    }
+   }
+  },
+  "warlitz": {
+   "gemeinde": "Warlitz",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 450,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 9.1,
+     "min": 12
+    },
+    "klinik": {
+     "km": 7.6,
+     "min": 10
+    },
+    "schwerin": {
+     "km": 41.4,
+     "min": 48
+    }
+   }
+  },
+  "kirch-jesar": {
+   "gemeinde": "Kirch Jesar",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 661,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 8,
+     "min": 10
+    },
+    "klinik": {
+     "km": 8,
+     "min": 10
+    },
+    "schwerin": {
+     "km": 37,
+     "min": 41
+    }
+   }
+  },
+  "kuhstorf": {
+   "gemeinde": "Kuhstorf",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 688,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 5.2,
+     "min": 7
+    },
+    "klinik": {
+     "km": 8.2,
+     "min": 12
+    },
+    "schwerin": {
+     "km": 40.8,
+     "min": 47
+    }
+   }
+  },
+  "bobzin": {
+   "gemeinde": "Bobzin",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 259,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 10.7,
+     "min": 14
+    },
+    "klinik": {
+     "km": 7.1,
+     "min": 9
+    },
+    "schwerin": {
+     "km": 36.6,
+     "min": 45
+    }
+   }
+  },
+  "bandenitz": {
+   "gemeinde": "Bandenitz",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 525,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 11.4,
+     "min": 13
+    },
+    "klinik": {
+     "km": 10.1,
+     "min": 12
+    },
+    "schwerin": {
+     "km": 25,
+     "min": 29
+    }
+   }
+  },
+  "moraas": {
+   "gemeinde": "Moraas",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 469,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 11.4,
+     "min": 14
+    },
+    "klinik": {
+     "km": 11.5,
+     "min": 14
+    },
+    "schwerin": {
+     "km": 40.4,
+     "min": 45
+    }
+   }
+  },
+  "pritzier": {
+   "gemeinde": "Pritzier",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 388,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 14.4,
+     "min": 16
+    },
+    "klinik": {
+     "km": 10.1,
+     "min": 11
+    },
+    "schwerin": {
+     "km": 46.7,
+     "min": 52
+    }
+   }
+  },
+  "gammelin": {
+   "gemeinde": "Gammelin",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 479,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 12.8,
+     "min": 17
+    },
+    "klinik": {
+     "km": 11.5,
+     "min": 17
+    },
+    "schwerin": {
+     "km": 26,
+     "min": 30
+    }
+   }
+  },
+  "redefin": {
+   "gemeinde": "Redefin",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 520,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 15.7,
+     "min": 18
+    },
+    "klinik": {
+     "km": 14.3,
+     "min": 16
+    },
+    "schwerin": {
+     "km": 48.1,
+     "min": 54
+    }
+   }
+  },
+  "bresegard-bei-picher": {
+   "gemeinde": "Bresegard bei Picher",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 275,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 10.8,
+     "min": 13
+    },
+    "klinik": {
+     "km": 13.8,
+     "min": 18
+    },
+    "schwerin": {
+     "km": 45.8,
+     "min": 50
+    }
+   }
+  },
+  "strohkirchen": {
+   "gemeinde": "Strohkirchen",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 317,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 11.6,
+     "min": 17
+    },
+    "klinik": {
+     "km": 14.8,
+     "min": 18
+    },
+    "schwerin": {
+     "km": 43.1,
+     "min": 47
+    }
+   }
+  },
+  "neu-zachun": {
+   "gemeinde": "Hoort",
+   "amt": "Hagenow-Land",
+   "einwohner": null,
+   "ziele": {
+    "bahnhof": {
+     "km": 15,
+     "min": 17
+    },
+    "klinik": {
+     "km": 13.7,
+     "min": 16
+    },
+    "schwerin": {
+     "km": 28.2,
+     "min": 33
+    }
+   }
+  },
+  "warsow": {
+   "gemeinde": "Warsow",
+   "amt": "Stralendorf",
+   "einwohner": {
+    "n": 653,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 16.3,
+     "min": 18
+    },
+    "klinik": {
+     "km": 14.9,
+     "min": 17
+    },
+    "schwerin": {
+     "km": 20.3,
+     "min": 25
+    }
+   }
+  },
+  "belsch": {
+   "gemeinde": "Belsch",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 212,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 18.4,
+     "min": 22
+    },
+    "klinik": {
+     "km": 17,
+     "min": 20
+    },
+    "schwerin": {
+     "km": 50.8,
+     "min": 58
+    }
+   }
+  },
+  "picher": {
+   "gemeinde": "Picher",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 634,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 14,
+     "min": 16
+    },
+    "klinik": {
+     "km": 17,
+     "min": 21
+    },
+    "schwerin": {
+     "km": 42.5,
+     "min": 46
+    }
+   }
+  },
+  "alt-zachun": {
+   "gemeinde": "Alt Zachun",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 349,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 17.8,
+     "min": 20
+    },
+    "klinik": {
+     "km": 16.4,
+     "min": 19
+    },
+    "schwerin": {
+     "km": 25.9,
+     "min": 31
+    }
+   }
+  },
+  "hoort": {
+   "gemeinde": "Hoort",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 566,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 17.9,
+     "min": 20
+    },
+    "klinik": {
+     "km": 16.5,
+     "min": 19
+    },
+    "schwerin": {
+     "km": 26.7,
+     "min": 32
+    }
+   }
+  },
+  "kothendorf": {
+   "gemeinde": "Warsow",
+   "amt": "Stralendorf",
+   "einwohner": null,
+   "ziele": {
+    "bahnhof": {
+     "km": 18.5,
+     "min": 21
+    },
+    "klinik": {
+     "km": 17.1,
+     "min": 20
+    },
+    "schwerin": {
+     "km": 20.5,
+     "min": 27
+    }
+   }
+  },
+  "gross-krams": {
+   "gemeinde": "Groß Krams",
+   "amt": "Hagenow-Land",
+   "einwohner": {
+    "n": 159,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 14,
+     "min": 18
+    },
+    "klinik": {
+     "km": 19.1,
+     "min": 21
+    },
+    "schwerin": {
+     "km": 50.3,
+     "min": 53
+    }
+   }
+  },
+  "parum": {
+   "gemeinde": null,
+   "amt": null,
+   "einwohner": null,
+   "ziele": {
+    "bahnhof": {
+     "km": 20,
+     "min": 26
+    },
+    "klinik": {
+     "km": 18.6,
+     "min": 25
+    },
+    "schwerin": {
+     "km": 24.8,
+     "min": 32
+    }
+   }
+  },
+  "vellahn": {
+   "gemeinde": "Vellahn",
+   "amt": "Zarrentin",
+   "einwohner": {
+    "n": 2706,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 22.9,
+     "min": 24
+    },
+    "klinik": {
+     "km": 18.6,
+     "min": 19
+    },
+    "schwerin": {
+     "km": 58.2,
+     "min": 59
+    }
+   }
+  },
+  "melkof": {
+   "gemeinde": "Vellahn",
+   "amt": "Zarrentin",
+   "einwohner": null,
+   "ziele": {
+    "bahnhof": {
+     "km": 24,
+     "min": 27
+    },
+    "klinik": {
+     "km": 19.7,
+     "min": 22
+    },
+    "schwerin": {
+     "km": 56.3,
+     "min": 63
+    }
+   }
+  },
+  "kraak": {
+   "gemeinde": null,
+   "amt": null,
+   "einwohner": null,
+   "ziele": {
+    "bahnhof": {
+     "km": 22.4,
+     "min": 25
+    },
+    "klinik": {
+     "km": 21,
+     "min": 24
+    },
+    "schwerin": {
+     "km": 29.4,
+     "min": 36
+    }
+   }
+  },
+  "alt-krenzlin": {
+   "gemeinde": "Alt Krenzlin",
+   "amt": "Ludwigslust-Land",
+   "einwohner": {
+    "n": 730,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 16.9,
+     "min": 21
+    },
+    "klinik": {
+     "km": 23.3,
+     "min": 25
+    },
+    "schwerin": {
+     "km": 48.1,
+     "min": 52
+    }
+   }
+  },
+  "wittenburg": {
+   "gemeinde": "Wittenburg",
+   "amt": "Wittenburg",
+   "einwohner": {
+    "n": 6211,
+    "jahr": "2025"
+   },
+   "ziele": {
+    "bahnhof": {
+     "km": 21.5,
+     "min": 25
+    },
+    "klinik": {
+     "km": 17.9,
+     "min": 20
+    },
+    "schwerin": {
+     "km": 39.3,
+     "min": 44
+    }
+   }
+  },
+  "dreiluetzow": {
+   "gemeinde": "Wittendörp",
+   "amt": "Wittenburg",
+   "einwohner": null,
+   "ziele": {
+    "bahnhof": {
+     "km": 24.6,
+     "min": 29
+    },
+    "klinik": {
+     "km": 21.7,
+     "min": 24
+    },
+    "schwerin": {
+     "km": 30.1,
+     "min": 38
+    }
+   }
+  }
+ }
+}
