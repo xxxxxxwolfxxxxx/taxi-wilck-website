@@ -94,12 +94,14 @@ function renderOrt(o, orte, info = null, ziele = null) {
   const title = `Taxi ${o.name} – Wilck ab Hagenow, Tel. ${TEL}`;
   const desc = `Taxi in ${o.name}: Taxi Wilck aus Hagenow holt Sie ab – Krankenfahrten aller Kassen, Flughafen- und Bahntransfer, Großraumtaxi bis 8 Personen. Tel. ${TEL}.`;
   const schema = [
-    { '@context': 'https://schema.org', ...SERVICE, areaServed: { '@type': 'Place', name: o.name, geo: { '@type': 'GeoCoordinates', latitude: o.lat, longitude: o.lon } } },
+    { '@context': 'https://schema.org', ...SERVICE, areaServed: { '@type': 'Place', name: o.name, ...(info && info.plz ? { address: { '@type': 'PostalAddress', postalCode: info.plz, addressLocality: o.name, addressCountry: 'DE' } } : {}), geo: { '@type': 'GeoCoordinates', latitude: o.lat, longitude: o.lon } } },
     breadcrumb([['Taxi Wilck', '/'], ['Fahrgebiet', '/fahrgebiet/'], [`Taxi ${o.name}`, url(o)]]),
     { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: qa.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) },
   ];
   const teile = o.ortsteile.length
     ? `<p>Wir fahren auch in den umliegenden Ortsteilen und Weilern: ${esc(joinDe(o.ortsteile))}.</p>` : '';
+  const plz = info && info.plz;
+  const abholort = plz ? `${plz} ${o.name}` : o.name;
   const her = herkunft(o, info);
   const tabelle = zieltabelle(o, info, ziele);
   return `${head({ title, desc, canonical, schema, css: tabelle ? ['/rechner.css'] : [] })}
@@ -117,7 +119,7 @@ function renderOrt(o, orte, info = null, ziele = null) {
       <input type="hidden" name="form-name" value="fahrt">
       <p class="hp"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
       <div class="two"><label>Name*<input name="name" required autocomplete="name"></label><label>Telefon*<input name="telefon" type="tel" required autocomplete="tel"></label></div>
-      <label>Abholort*<input name="abholort" required autocomplete="street-address" placeholder="Straße, Ort" value="${esc(o.name)}"></label>
+      <label>Abholort*<input name="abholort" required autocomplete="street-address" placeholder="Straße, Ort" value="${esc(abholort)}"></label>
       <label>Ziel*<input name="ziel" required placeholder="Adresse, Klinik, Bahnhof, Flughafen …"></label>
       <div class="three"><label>Datum*<input name="datum" type="date" required id="d"></label><label>Uhrzeit*<input name="uhrzeit" type="time" required></label><label>Pers.*<input name="personen" type="number" min="1" max="8" value="1" required aria-label="Personenzahl"></label></div>
       <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich habe die <a href="/datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
@@ -135,7 +137,7 @@ function renderOrt(o, orte, info = null, ziele = null) {
 <section aria-labelledby="h-ort"><div class="wrap">
   <span class="eyebrow">Taxi ${esc(o.name)}</span>
   <h2 id="h-ort">Ihr Taxi in ${esc(o.name)} und Umgebung.</h2>
-  <p>${her ? esc(her) + ' ' : ''}${esc(o.name)} liegt etwa ${de(o.km)} km (rund ${o.min} Minuten Fahrt) von unserem Standort in Hagenow entfernt. Ob Krankenfahrt, Bahn- oder Flughafentransfer, Schulweg oder Gruppenfahrt: Rufen Sie uns an unter <a href="${TEL_HREF}">${TEL}</a>, wir kümmern uns.</p>
+  <p>${her ? esc(her) + ' ' : ''}${esc(o.name)}${plz ? ` (${plz})` : ''} liegt etwa ${de(o.km)} km (rund ${o.min} Minuten Fahrt) von unserem Standort in Hagenow entfernt. Ob Krankenfahrt, Bahn- oder Flughafentransfer, Schulweg oder Gruppenfahrt: Rufen Sie uns an unter <a href="${TEL_HREF}">${TEL}</a>, wir kümmern uns.</p>
   ${teile}
   <p>Eine Fahrt zwischen ${esc(o.name)} und Hagenow kostet nach dem Taxitarif rund <strong>${preis}&nbsp;€</strong> (Tagtarif, ohne Zuschläge und Wartezeit). Den Preis für Ihre genaue Strecke zeigt der <a href="/preisrechner.html">Preisrechner</a>.</p>
   ${tabelle}
@@ -161,7 +163,7 @@ ${FOOTER}
 const letter = (o) => o.name.charAt(0).toLocaleUpperCase('de');
 const alpha = (orte) => [...orte].sort((a, b) => a.name.localeCompare(b.name, 'de'));
 
-function renderUebersicht(orte) {
+function renderUebersicht(orte, infos = {}) {
   const canonical = `${BASE}/fahrgebiet/`;
   const title = `Fahrgebiet: Taxi in Hagenow und Umgebung – Taxi Wilck`;
   const desc = `Taxi Wilck fährt in Hagenow und in ${orte.length} Orten der Umgebung, darunter Wittenburg, Pritzier, Redefin und Vellahn. Entfernungen, Fahrzeiten und Tel. ${TEL}.`;
@@ -176,7 +178,7 @@ function renderUebersicht(orte) {
   <div data-orte>
   <ul class="orte-liste">
     <li data-l="H"><a href="/"><strong>Hagenow</strong> <span>Standort</span></a></li>
-    ${alpha(orte).map((o) => `<li data-l="${letter(o)}"><a href="${url(o)}"><strong>${esc(o.name)}</strong> <span>${de(o.km)} km · ca. ${o.min} Min.</span></a></li>`).join('\n    ')}
+    ${alpha(orte).map((o) => `<li data-l="${letter(o)}"><a href="${url(o)}"><strong>${esc(o.name)}</strong> <span>${infos[o.slug] && infos[o.slug].plz ? `PLZ ${infos[o.slug].plz} · ` : ''}${de(o.km)} km · ca. ${o.min} Min.</span></a></li>`).join('\n    ')}
   </ul>
   </div>
   <script src="/orte-filter.js" defer></script>
@@ -226,7 +228,7 @@ function build() {
   fs.writeFileSync(idx, injectPartials(injectStartseite(fs.readFileSync(idx, 'utf8'), orte)));
   const calc = path.join(ROOT, 'preisrechner.html');
   fs.writeFileSync(calc, injectPartials(fs.readFileSync(calc, 'utf8')));
-  write('fahrgebiet/index.html', renderUebersicht(orte));
+  write('fahrgebiet/index.html', renderUebersicht(orte, daten.orte));
   write('sitemap.xml', renderSitemap(orte));
   console.log(`${orte.length} Ortsseiten, Übersicht und Sitemap geschrieben.`);
 }

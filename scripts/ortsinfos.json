@@ -26,6 +26,7 @@
   "steegen": {
    "gemeinde": "Pätow-Steegen",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": null,
    "ziele": {
     "bahnhof": {
@@ -45,6 +46,7 @@
   "paetow": {
    "gemeinde": "Pätow-Steegen",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": null,
    "ziele": {
     "bahnhof": {
@@ -64,6 +66,7 @@
   "toddin": {
    "gemeinde": "Toddin",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 872,
     "jahr": "2025"
@@ -86,6 +89,7 @@
   "warlitz": {
    "gemeinde": "Warlitz",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 450,
     "jahr": "2025"
@@ -108,6 +112,7 @@
   "kirch-jesar": {
    "gemeinde": "Kirch Jesar",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 661,
     "jahr": "2025"
@@ -130,6 +135,7 @@
   "kuhstorf": {
    "gemeinde": "Kuhstorf",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 688,
     "jahr": "2025"
@@ -152,6 +158,7 @@
   "bobzin": {
    "gemeinde": "Bobzin",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 259,
     "jahr": "2025"
@@ -174,6 +181,7 @@
   "bandenitz": {
    "gemeinde": "Bandenitz",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 525,
     "jahr": "2025"
@@ -196,6 +204,7 @@
   "moraas": {
    "gemeinde": "Moraas",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 469,
     "jahr": "2025"
@@ -218,6 +227,7 @@
   "pritzier": {
    "gemeinde": "Pritzier",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 388,
     "jahr": "2025"
@@ -240,6 +250,7 @@
   "gammelin": {
    "gemeinde": "Gammelin",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 479,
     "jahr": "2025"
@@ -262,6 +273,7 @@
   "redefin": {
    "gemeinde": "Redefin",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 520,
     "jahr": "2025"
@@ -284,6 +296,7 @@
   "bresegard-bei-picher": {
    "gemeinde": "Bresegard bei Picher",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 275,
     "jahr": "2025"
@@ -306,6 +319,7 @@
   "strohkirchen": {
    "gemeinde": "Strohkirchen",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 317,
     "jahr": "2025"
@@ -328,6 +342,7 @@
   "neu-zachun": {
    "gemeinde": "Hoort",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": null,
    "ziele": {
     "bahnhof": {
@@ -347,6 +362,7 @@
   "warsow": {
    "gemeinde": "Warsow",
    "amt": "Stralendorf",
+   "plz": "19075",
    "einwohner": {
     "n": 653,
     "jahr": "2025"
@@ -369,6 +385,7 @@
   "belsch": {
    "gemeinde": "Belsch",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 212,
     "jahr": "2025"
@@ -391,6 +408,7 @@
   "picher": {
    "gemeinde": "Picher",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 634,
     "jahr": "2025"
@@ -413,6 +431,7 @@
   "alt-zachun": {
    "gemeinde": "Alt Zachun",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 349,
     "jahr": "2025"
@@ -435,6 +454,7 @@
   "hoort": {
    "gemeinde": "Hoort",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 566,
     "jahr": "2025"
@@ -457,6 +477,7 @@
   "kothendorf": {
    "gemeinde": "Warsow",
    "amt": "Stralendorf",
+   "plz": "19075",
    "einwohner": null,
    "ziele": {
     "bahnhof": {
@@ -476,6 +497,7 @@
   "gross-krams": {
    "gemeinde": "Groß Krams",
    "amt": "Hagenow-Land",
+   "plz": "19230",
    "einwohner": {
     "n": 159,
     "jahr": "2025"
@@ -498,6 +520,7 @@
   "parum": {
    "gemeinde": null,
    "amt": null,
+   "plz": "19073",
    "einwohner": null,
    "ziele": {
     "bahnhof": {
@@ -517,6 +540,7 @@
   "vellahn": {
    "gemeinde": "Vellahn",
    "amt": "Zarrentin",
+   "plz": "19260",
    "einwohner": {
     "n": 2706,
     "jahr": "2025"
@@ -539,6 +563,7 @@
   "melkof": {
    "gemeinde": "Vellahn",
    "amt": "Zarrentin",
+   "plz": "19260",
    "einwohner": null,
    "ziele": {
     "bahnhof": {
@@ -558,6 +583,7 @@
   "kraak": {
    "gemeinde": null,
    "amt": null,
+   "plz": "19077",
    "einwohner": null,
    "ziele": {
     "bahnhof": {
@@ -577,6 +603,7 @@
   "alt-krenzlin": {
    "gemeinde": "Alt Krenzlin",
    "amt": "Ludwigslust-Land",
+   "plz": "19288",
    "einwohner": {
     "n": 730,
     "jahr": "2025"
@@ -599,6 +626,7 @@
   "wittenburg": {
    "gemeinde": "Wittenburg",
    "amt": "Wittenburg",
+   "plz": "19243",
    "einwohner": {
     "n": 6211,
     "jahr": "2025"
@@ -621,6 +649,7 @@
   "dreiluetzow": {
    "gemeinde": "Wittendörp",
    "amt": "Wittenburg",
+   "plz": "19243",
    "einwohner": null,
    "ziele": {
     "bahnhof": {

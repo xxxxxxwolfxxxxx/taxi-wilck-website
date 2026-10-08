@@ -29,24 +29,40 @@ async function einwohner(qid) {
   return cl.length && cl[0].n > 0 ? { n: cl[0].n, jahr: cl[0].t.slice(1, 5) } : null;
 }
 
+/** Postleitzahl: Wikidata (P281) der Gemeinde; Gegenprobe Nominatim. Nur eindeutige Werte (5 Ziffern). */
+async function plzWikidata(qid) {
+  const d = await get(`https://www.wikidata.org/w/api.php?action=wbgetentities&format=json&ids=${qid}&props=claims`);
+  const v = (d.entities[qid].claims.P281 || []).map((c) => c.mainsnak.datavalue && c.mainsnak.datavalue.value).filter(Boolean);
+  return v.length === 1 && /^\d{5}$/.test(v[0]) ? v[0] : null;
+}
+async function plzNominatim(o) {
+  const r = await get(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&addressdetails=1&zoom=14&accept-language=de&lat=${o.lat}&lon=${o.lon}`);
+  return (r.address && /^\d{5}$/.test(r.address.postcode || '') && r.address.postcode) || null;
+}
+
 const amtVon = (t) => (t.match(/vom Amt ([^.\n]+?) (?:mit Sitz|verwaltet)/) || t.match(/Sitz des Amtes ([^.,\n]+)/) || [])[1] || null;
 
 (async () => {
   const out = {};
   for (const o of orte) {
-    const info = { gemeinde: null, amt: null, einwohner: null, ziele: {} };
+    const info = { gemeinde: null, amt: null, plz: null, einwohner: null, ziele: {} };
+    let wdPlz = null;
     try {
       let w = await wiki(ALIAS[o.name] || o.name);
       const istOrt = (x) => /ist eine (Gemeinde|Stadt)/.test(x.text) && /Ludwigslust-Parchim/.test(x.text);
       if (istOrt(w)) {
         if (w.title === o.name) {
           info.gemeinde = o.name; info.amt = amtVon(w.text);
-          if (w.qid) info.einwohner = await einwohner(w.qid);
+          if (w.qid) { info.einwohner = await einwohner(w.qid); wdPlz = await plzWikidata(w.qid); }
         } else if ((await wiki(w.title, true)).text.includes(o.name)) { // Ortsteil einer anderen Gemeinde
           info.gemeinde = w.title; info.amt = amtVon(w.text);
+          if (w.qid) wdPlz = await plzWikidata(w.qid);
         }
       }
     } catch (e) { console.log(o.name, 'Wikipedia-Fehler', e.message); }
+    const nomPlz = await plzNominatim(o).catch(() => null); await pause(1100);
+    info.plz = wdPlz || nomPlz;
+    if (wdPlz && nomPlz && wdPlz !== nomPlz) console.log('  ! PLZ-Abweichung', o.name, 'Wikidata', wdPlz, 'Nominatim', nomPlz);
     for (const z of ZIELE) {
       try {
         const r = await get(`https://router.project-osrm.org/route/v1/driving/${o.lon},${o.lat};${z.lon},${z.lat}?overview=false`);
@@ -56,7 +72,7 @@ const amtVon = (t) => (t.match(/vom Amt ([^.\n]+?) (?:mit Sitz|verwaltet)/) || t
       await pause(250);
     }
     out[o.slug] = info;
-    console.log(o.name, '|', info.gemeinde, '|', info.amt, '|', info.einwohner && info.einwohner.n, '|', JSON.stringify(info.ziele));
+    console.log(o.name, '|', info.plz, '|', info.gemeinde, '|', info.amt, '|', info.einwohner && info.einwohner.n, '|', JSON.stringify(info.ziele));
     await pause(250);
   }
   fs.writeFileSync(path.join(__dirname, 'ortsinfos.json'), JSON.stringify({ ziele: ZIELE, orte: out }, null, 1));
