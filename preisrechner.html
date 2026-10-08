@@ -8,31 +8,32 @@
 <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="rechner.css"><link rel="icon" href="img/logo.svg">
 </head>
 <body>
-<!--header-start--><a class="skip" href="#main">Zum Inhalt springen</a><header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="/img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a><nav class="main" aria-label="Hauptnavigation">
-<a href="/#leistungen">Leistungen</a><a href="/preisrechner.html">Preisrechner</a><a href="/fahrgebiet/">Fahrgebiet</a><a href="/#ueber-uns">Über uns</a><a href="/#kontakt">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call">Anrufen</span></a></nav></header><!--header-end-->
+<!--header-start--><a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a><header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="/img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a><nav class="main" aria-label="Hauptnavigation">
+<a href="/#leistungen" data-i18n="nav.services">Leistungen</a><a href="/preisrechner.html" data-i18n="nav.calc">Preisrechner</a><a href="/fahrgebiet/" data-i18n="nav.area">Fahrgebiet</a><a href="/#ueber-uns" data-i18n="nav.about">Über uns</a><a href="/#kontakt" data-i18n="nav.contact">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call" data-i18n="nav.call">Anrufen</span></a></nav><div class="lang" data-lang-switch></div></header><!--header-end-->
 
 <main id="main">
 <section class="calc-hero"><div class="wrap">
-  <span class="eyebrow">Preisrechner</span>
-  <h1>Was kostet meine Taxifahrt?</h1>
-  <p class="lead">Start und Ziel eingeben – wir berechnen den Fahrpreis nach dem amtlichen Taxitarif für Hagenow.</p>
+  <span class="eyebrow" data-i18n="nav.calc">Preisrechner</span>
+  <h1 data-i18n="pc.h1">Was kostet meine Taxifahrt?</h1>
+  <p class="lead" data-i18n="pc.lead">Start und Ziel eingeben – wir berechnen den Fahrpreis nach dem amtlichen Taxitarif für Hagenow.</p>
   <div class="calc-grid">
     <form id="calc" class="calc">
-      <label>Start<input id="start" required autocomplete="street-address" placeholder="Straße, Hausnummer, Ort" value=""></label>
-      <label>Ziel<input id="ziel" required placeholder="Straße, Hausnummer, Ort" value=""></label>
-      <div class="two"><label>Datum<input id="datum" type="date" required></label><label>Abfahrt (Uhrzeit)<input id="zeit" type="time" required></label></div>
-      <fieldset><legend>Optional</legend>
-        <label class="chk"><input type="checkbox" id="gross"><span>Großraumtaxi – ab 5 Fahrgästen <small>(Zuschlag 8,00 €)</small></span></label>
-        <label class="chk"><input type="checkbox" id="rolli"><span>Rollstuhltransport <small>(Zuschlag 19,00 €, nur im umgerüsteten Fahrzeug)</small></span></label>
-        <label class="chk"><input type="checkbox" id="umsetz"><span>Umsetzen aus dem Rollstuhl erforderlich <small>(2 Transportpersonen, Zuschlag 38,00 €)</small></span></label>
-        <label class="chk"><input type="checkbox" id="warte-an"><span>Wartezeit einplanen</span></label>
-        <label id="warte-box" hidden>Wartezeit in Minuten<input id="warte" type="number" min="0" max="600" step="1" value="10"></label>
+      <label><span data-i18n="pc.start">Start</span><input id="start" required autocomplete="street-address" placeholder="Straße, Hausnummer, Ort" data-i18n-attr="placeholder:pc.ph" value=""></label>
+      <label><span data-i18n="pc.dest">Ziel</span><input id="ziel" required placeholder="Straße, Hausnummer, Ort" data-i18n-attr="placeholder:pc.ph" value=""></label>
+      <div class="two"><label><span data-i18n="pc.date">Datum</span><input id="datum" type="date" required></label><label><span data-i18n="pc.time">Abfahrt (Uhrzeit)</span><input id="zeit" type="time" required></label></div>
+      <fieldset><legend data-i18n="pc.opt">Optional</legend>
+        <label class="chk"><input type="checkbox" id="gross"><span><span data-i18n="pc.gross">Großraumtaxi – ab 5 Fahrgästen</span> <small data-i18n="pc.gross.s">(Zuschlag 8,00 €)</small></span></label>
+        <label class="chk"><input type="checkbox" id="rolli"><span>Rollstuhltransport <small data-i18n="pc.rolli.s">(Zuschlag 19,00 €, nur im umgerüsteten Fahrzeug)</small></span></label>
+        <label class="chk"><input type="checkbox" id="umsetz"><span>Umsetzen aus dem Rollstuhl erforderlich <small data-i18n="pc.umsetz.s">(2 Transportpersonen, Zuschlag 38,00 €)</small></span></label>
+        <label class="chk"><input type="checkbox" id="warte-an"><span data-i18n="pc.warte">Wartezeit einplanen</span></label>
+        <label id="warte-box" hidden><span data-i18n="pc.warte.min">Wartezeit in Minuten</span><input id="warte" type="number" min="0" max="600" step="1" value="10"></label>
       </fieldset>
-      <label class="consent"><input type="checkbox" required><span>Ich bin einverstanden, dass meine Adressen zur Berechnung an die Kartendienste OpenStreetMap (Nominatim) und OSRM übermittelt werden. Siehe <a href="datenschutz.html">Datenschutzrichtlinie</a>.</span></label>
-      <button id="go" class="btn red" type="submit">Preis berechnen →</button>
+      <label class="consent"><input type="checkbox" required><span data-i18n-html="pc.consent">Ich bin einverstanden, dass meine Adressen zur Berechnung an die Kartendienste OpenStreetMap (Nominatim) und OSRM übermittelt werden. Siehe <a href="datenschutz.html">Datenschutzrichtlinie</a>.</span></label>
+      <button id="go" class="btn red" type="submit" data-i18n="pc.go">Preis berechnen →</button>
     </form>
-    <div class="result-box" aria-live="polite"><div id="result" tabindex="-1"><p class="rnote">Hier erscheint Ihr voraussichtlicher Fahrpreis.</p></div>
-      <div class="two-kinds"><h2>Tarifberechnung ≠ Preiszusage</h2><p>Die Berechnung zeigt, was die Fahrt nach Tarif voraussichtlich kostet. Sie ist <strong>keine Buchung</strong> und keine verbindliche Preiszusage. Bei Fahrten außerhalb des Pflichtfahrgebiets vereinbaren wir den Preis vor Fahrtantritt mit Ihnen.</p><a class="btn" href="/#fahrt">Fahrt anfragen →</a></div>
+    <div class="result-box" aria-live="polite"><div id="result" tabindex="-1"><p class="rnote" data-i18n="pc.hint">Hier erscheint Ihr voraussichtlicher Fahrpreis.</p></div>
+      <div class="two-kinds"><h2 data-i18n="pc.t2.h">Tarifberechnung ≠ Preiszusage</h2><p data-i18n-html="pc.t2.p">Die Berechnung zeigt, was die Fahrt nach Tarif voraussichtlich kostet. Sie ist <strong>keine Buchung</strong> und keine verbindliche Preiszusage. Bei Fahrten außerhalb des Pflichtfahrgebiets vereinbaren wir den Preis vor Fahrtantritt mit Ihnen.</p><a class="btn" href="/#fahrt" data-i18n="form.submit">Fahrt anfragen →</a></div>
+      <p class="rnote" data-foreign-only data-i18n="pc.note" hidden>Die Ergebnisanzeige und die rechtlichen Hinweise erscheinen auf Deutsch.</p>
     </div>
   </div>
 </div></section>
@@ -77,7 +78,7 @@
 </div></section>
 </main>
 <script src="/tarif.js"></script><script src="/rechner.js"></script>
-<!--footer-start--><footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/">Fahrgebiet</a><a href="/preisrechner.html">Preisrechner</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutzrichtlinie</a></span></footer>
+<!--footer-start--><footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/" data-i18n="nav.area">Fahrgebiet</a><a href="/preisrechner.html" data-i18n="nav.calc">Preisrechner</a><a href="/impressum.html" data-i18n="foot.imprint">Impressum</a><a href="/datenschutz.html" data-i18n="foot.privacy">Datenschutzrichtlinie</a></span></footer>
 <script>var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();var d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);</script>
-<script src="/nav.js" defer></script><script src="/standort.js" defer></script><script src="/anfrage.js" defer></script><!--footer-end-->
+<script src="/i18n.js" defer></script><script src="/nav.js" defer></script><script src="/standort.js" defer></script><script src="/anfrage.js" defer></script><!--footer-end-->
 </body></html>

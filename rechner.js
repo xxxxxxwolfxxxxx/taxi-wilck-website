@@ -45,10 +45,11 @@
   }
   function note(text, cls) { const p = document.createElement('p'); p.className = 'rnote ' + (cls || ''); p.textContent = text; return p; }
 
+  const tr = (k, de) => (window.I18N ? window.I18N.t(k, de) : de);
   async function calculate(ev) {
     ev.preventDefault();
     const out = $('result'), btn = $('go');
-    out.replaceChildren(); btn.disabled = true; btn.textContent = 'Berechne …';
+    out.replaceChildren(); btn.disabled = true; btn.textContent = tr('pc.busy', 'Berechne …');
     try {
       const s = await geocode($('start').value); await sleep(1100);
       const z = await geocode($('ziel').value);
@@ -96,7 +97,7 @@
     } catch (e) {
       out.append(note('Die Berechnung ist gerade nicht möglich (Karten-Dienst nicht erreichbar). Bitte rufen Sie uns an: 03883 723240.', 'warn'));
     } finally {
-      btn.disabled = false; btn.textContent = 'Preis berechnen →';
+      btn.disabled = false; btn.textContent = tr('pc.go', 'Preis berechnen →');
     }
   }
 

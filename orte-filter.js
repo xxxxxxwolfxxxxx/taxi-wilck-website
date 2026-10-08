@@ -22,6 +22,7 @@
       var b = document.createElement('button');
       b.type = 'button';
       b.textContent = l;
+      if (!i) b.setAttribute('data-i18n', 'area.filter.all');
       b.dataset.l = i ? l : '';
       b.addEventListener('click', function () { show(i ? l : ''); });
       nav.appendChild(b);

@@ -12,71 +12,71 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Wie bestelle ich ein Taxi in Warsow?","acceptedAnswer":{"@type":"Answer","text":"Rufen Sie uns unter 03883 723240 an oder senden Sie die Fahrtanfrage oben auf dieser Seite. Der Abholort Warsow ist bereits eingetragen. Wir bestätigen telefonisch."}},{"@type":"Question","name":"Wie weit ist es von Warsow nach Hagenow?","acceptedAnswer":{"@type":"Answer","text":"Die Fahrstrecke zwischen Warsow und unserem Standort in Hagenow beträgt etwa 15,2 km, die Fahrzeit rund 17 Minuten."}},{"@type":"Question","name":"Was kostet eine Taxifahrt von Warsow nach Hagenow?","acceptedAnswer":{"@type":"Answer","text":"Nach dem Taxitarif (Tagtarif, ohne Zuschläge und Wartezeit) rund 46,70 € für etwa 15,2 km. Den Preis für Ihre genaue Strecke zeigt der Preisrechner."}},{"@type":"Question","name":"Wie komme ich von Warsow zum Bahnhof Hagenow?","acceptedAnswer":{"@type":"Answer","text":"Zum Bahnhof Hagenow Land sind es ab Warsow etwa 16,3 km, die Fahrt dauert rund 18 Minuten und kostet nach dem Tagtarif etwa 49,50 €. Bestellen Sie das Taxi gern vorab unter 03883 723240."}},{"@type":"Question","name":"Fahren Sie in Warsow auch Krankenfahrten?","acceptedAnswer":{"@type":"Answer","text":"Ja, für alle Krankenkassen. Zum Klinikum Hagenow sind es ab Warsow etwa 14,9 km (rund 17 Minuten), zu den Helios Kliniken Schwerin etwa 20,3 km (rund 25 Minuten). Wir fahren außerdem Kur- und Rehafahrten, Fahrten zur Chemo- und Bestrahlungstherapie sowie Behindertentransporte."}}]}</script>
 </head>
 <body>
-<a class="skip" href="#main">Zum Inhalt springen</a><header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="/img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a><nav class="main" aria-label="Hauptnavigation">
-<a href="/#leistungen">Leistungen</a><a href="/preisrechner.html">Preisrechner</a><a href="/fahrgebiet/">Fahrgebiet</a><a href="/#ueber-uns">Über uns</a><a href="/#kontakt">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call">Anrufen</span></a></nav></header>
+<a class="skip" href="#main" data-i18n="skip">Zum Inhalt springen</a><header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="/img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a><nav class="main" aria-label="Hauptnavigation">
+<a href="/#leistungen" data-i18n="nav.services">Leistungen</a><a href="/preisrechner.html" data-i18n="nav.calc">Preisrechner</a><a href="/fahrgebiet/" data-i18n="nav.area">Fahrgebiet</a><a href="/#ueber-uns" data-i18n="nav.about">Über uns</a><a href="/#kontakt" data-i18n="nav.contact">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call" data-i18n="nav.call">Anrufen</span></a></nav><div class="lang" data-lang-switch></div></header>
 <main id="main">
 <section class="hero" style="padding:0" aria-labelledby="h1">
   <img src="/img/flotte-1600.jpg" srcset="/img/flotte-1000.jpg 900w, /img/flotte-1600.jpg 1600w, /img/flotte.jpg 3600w" sizes="100vw" width="3600" height="1537" alt="Taxi Wilck: silberner Großraumbus und beiges Taxi vor Wolkenhimmel" fetchpriority="high">
   <div class="in">
     <div class="hero-txt">
-      <h1 id="h1">Taxi in Warsow – <b>mit dem Doppel-W.</b></h1>
-      <p>Wir holen Sie in Warsow ab – pünktlich und zuverlässig, seit über 30 Jahren aus Hagenow.</p>
-      <div><a class="decal" href="tel:03883723240" aria-label="Jetzt anrufen: 03883 723240"><span>Tel.</span><span>03883 72 32 40</span></a></div>
+      <h1 id="h1"><span data-i18n="p.h1a" data-i18n-vars='{"name":"Warsow"}'>Taxi in Warsow.</span> <b data-i18n="p.h1b">Wir holen Sie ab.</b></h1>
+      <p data-i18n="p.hero">Pünktlich und zuverlässig, seit über 30 Jahren ab Hagenow.</p>
+      <div><a class="decal" href="tel:03883723240" aria-label="Jetzt anrufen: 03883 723240"><span data-i18n="tel.short">Tel.</span><span>03883 72 32 40</span></a></div>
     </div>
     <form class="ride" id="fahrt" name="fahrt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html" aria-labelledby="h-ride">
-      <h2 id="h-ride">Fahrt anfragen</h2>
-      <input type="hidden" name="form-name" value="fahrt">
+      <h2 id="h-ride" data-i18n="form.title">Fahrt anfragen</h2>
+      <input type="hidden" name="form-name" value="fahrt"><input type="hidden" name="sprache" value="de">
       <p class="hp"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
-      <label>Abholort*<input name="abholort" required autocomplete="street-address" enterkeyhint="next" placeholder="Straße, Ort" value="19075 Warsow"></label>
-      <div class="two"><label>Name*<input name="name" required autocomplete="name" enterkeyhint="next"></label><label>Telefon*<input name="telefon" type="tel" inputmode="tel" required autocomplete="tel" enterkeyhint="next"></label></div>
-      <label><span>Ziel <span class="opt">(optional, sonst am Telefon)</span></span><input name="ziel" autocomplete="off" enterkeyhint="done" placeholder="Adresse, Klinik, Bahnhof, Flughafen …"></label>
-      <fieldset class="when"><legend>Wann?</legend>
-        <div class="seg"><label class="seg-opt"><input type="radio" name="wann" value="Sofort"><span>Sofort</span></label><label class="seg-opt"><input type="radio" name="wann" value="Später" checked><span>Später / Termin</span></label></div>
-        <div class="three"><label class="later">Datum*<input name="datum" type="date" required id="d"></label><label class="later">Uhrzeit*<input name="uhrzeit" type="time" required></label><label>Pers.*<input name="personen" type="number" inputmode="numeric" min="1" max="8" value="1" required aria-label="Personenzahl"></label></div>
+      <label><span data-i18n="form.pickup">Abholort*</span><input name="abholort" required autocomplete="street-address" enterkeyhint="next" placeholder="Straße, Ort" data-i18n-attr="placeholder:form.pickup.ph" value="19075 Warsow"></label>
+      <div class="two"><label><span data-i18n="form.name">Name*</span><input name="name" required autocomplete="name" enterkeyhint="next"></label><label><span data-i18n="form.phone">Telefon*</span><input name="telefon" type="tel" inputmode="tel" required autocomplete="tel" enterkeyhint="next"></label></div>
+      <label><span><span data-i18n="form.dest">Ziel</span> <span class="opt" data-i18n="form.dest.opt">(optional, sonst am Telefon)</span></span><input name="ziel" autocomplete="off" enterkeyhint="done" placeholder="Adresse, Klinik, Bahnhof, Flughafen …" data-i18n-attr="placeholder:form.dest.ph"></label>
+      <fieldset class="when"><legend data-i18n="form.when">Wann?</legend>
+        <div class="seg"><label class="seg-opt"><input type="radio" name="wann" value="Sofort"><span data-i18n="form.now">Sofort</span></label><label class="seg-opt"><input type="radio" name="wann" value="Später" checked><span data-i18n="form.later">Später / Termin</span></label></div>
+        <div class="three"><label class="later"><span data-i18n="form.date">Datum*</span><input name="datum" type="date" required id="d"></label><label class="later"><span data-i18n="form.time">Uhrzeit*</span><input name="uhrzeit" type="time" required></label><label><span data-i18n="form.pers">Pers.*</span><input name="personen" type="number" inputmode="numeric" min="1" max="8" value="1" required aria-label="Personenzahl" data-i18n-attr="aria-label:form.pers.aria"></label></div>
       </fieldset>
-      <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich habe die <a href="/datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
-      <button class="btn red" type="submit">Fahrt anfragen →</button>
-      <p class="note">Unverbindliche Anfrage – wir bestätigen telefonisch.</p>
+      <label class="consent"><input type="checkbox" name="datenschutz" required><span data-i18n-html="form.consent">Ich habe die <a href="/datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
+      <button class="btn red" type="submit" data-i18n="form.submit">Fahrt anfragen →</button>
+      <p class="note" data-i18n="form.note">Unverbindliche Anfrage – wir bestätigen telefonisch.</p>
     </form>
   </div>
 </section>
 <div class="facts" role="list">
-  <div role="listitem"><strong>15,2 km</strong><span>von Warsow nach Hagenow</span></div>
-  <div role="listitem"><strong>ca. 17 Minuten</strong><span>Fahrzeit</span></div>
-  <div role="listitem"><strong>Bis 8 Personen</strong><span>Großraumtaxi</span></div>
+  <div role="listitem"><strong>15,2 km</strong><span data-i18n="p.fact.from" data-i18n-vars='{"name":"Warsow"}'>von Warsow nach Hagenow</span></div>
+  <div role="listitem"><strong data-i18n="p.fact.min" data-i18n-vars='{"min":17}'>ca. 17 Minuten</strong><span data-i18n="p.fact.drive">Fahrzeit</span></div>
+  <div role="listitem"><strong data-i18n="fact.up8">Bis 8 Personen</strong><span data-i18n="p.fact.van">Großraumtaxi</span></div>
 </div>
 
 <section aria-labelledby="h-ort"><div class="wrap">
-  <span class="eyebrow">Taxi Warsow</span>
-  <h2 id="h-ort">Ihr Taxi in Warsow und Umgebung.</h2>
-  <p>Warsow ist eine Gemeinde im Amt Stralendorf mit rund 653 Einwohnern (Stand 2025). Warsow (19075) liegt etwa 15,2 km (rund 17 Minuten Fahrt) von unserem Standort in Hagenow entfernt. Ob Krankenfahrt, Bahn- oder Flughafentransfer, Schulweg oder Gruppenfahrt: Rufen Sie uns an unter <a href="tel:03883723240">03883 723240</a>, wir kümmern uns.</p>
-  <p>Wir fahren auch in den umliegenden Ortsteilen und Weilern: Besendorf, Lehmkuhlen und Sudenmühle.</p>
-  <p>Eine Fahrt zwischen Warsow und Hagenow kostet nach dem Taxitarif rund <strong>46,70&nbsp;€</strong> (Tagtarif, ohne Zuschläge und Wartezeit). Den Preis für Ihre genaue Strecke zeigt der <a href="/preisrechner.html">Preisrechner</a>.</p>
-  <h3>Typische Fahrten ab Warsow</h3>
-  <table class="ex ziele"><thead><tr><th scope="col">Ziel</th><th scope="col">Strecke</th><th scope="col">Fahrzeit</th><th scope="col">Tagtarif</th></tr></thead><tbody>
-      <tr><th scope="row">Bahnhof Hagenow Land</th><td data-label="Strecke">16,3 km</td><td data-label="Fahrzeit">ca. 18 Min.</td><td data-label="Tagtarif">ca. 49,50&nbsp;€</td></tr>
-      <tr><th scope="row">Klinikum Hagenow</th><td data-label="Strecke">14,9 km</td><td data-label="Fahrzeit">ca. 17 Min.</td><td data-label="Tagtarif">ca. 45,90&nbsp;€</td></tr>
-      <tr><th scope="row">Helios Kliniken Schwerin</th><td data-label="Strecke">20,3 km</td><td data-label="Fahrzeit">ca. 25 Min.</td><td data-label="Tagtarif">Preis vor Fahrtantritt</td></tr></tbody></table>
-  <p class="small">Preise nach dem Taxitarif (Tagtarif, ohne Zuschläge und Wartezeit). Schwerin liegt außerhalb unseres Pflichtfahrgebiets, dort nennen wir Ihnen den Preis vor Fahrtantritt.</p>
+  <span class="eyebrow" data-i18n="p.eyebrow" data-i18n-vars='{"name":"Warsow"}'>Taxi Warsow</span>
+  <h2 id="h-ort" data-i18n="p.h2" data-i18n-vars='{"name":"Warsow"}'>Ihr Taxi in Warsow und Umgebung.</h2>
+  <p><span data-de-only>Warsow ist eine Gemeinde im Amt Stralendorf mit rund 653 Einwohnern (Stand 2025). </span><span data-i18n-html="p.intro" data-i18n-vars='{"name":"Warsow","plz":" (19075)","km":15.2,"min":17}'>Warsow (19075) liegt etwa 15,2 km (rund 17 Minuten Fahrt) von unserem Standort in Hagenow entfernt. Ob Krankenfahrt, Bahn- oder Flughafentransfer, Schulweg oder Gruppenfahrt: Rufen Sie uns an unter <a href="tel:03883723240">03883 723240</a>, wir kümmern uns.</span></p>
+  <p data-i18n="p.parts" data-i18n-vars='{"list":"Besendorf, Lehmkuhlen, Sudenmühle"}'>Wir fahren auch in den umliegenden Ortsteilen und Weilern: Besendorf, Lehmkuhlen und Sudenmühle.</p>
+  <p data-i18n-html="p.price" data-i18n-vars='{"name":"Warsow","preis":46.7}'>Eine Fahrt zwischen Warsow und Hagenow kostet nach dem Taxitarif rund <strong>46,70&nbsp;€</strong> (Tagtarif, ohne Zuschläge und Wartezeit). Den Preis für Ihre genaue Strecke zeigt der <a href="/preisrechner.html">Preisrechner</a>.</p>
+  <h3 data-i18n="p.t.h3" data-i18n-vars='{"name":"Warsow"}'>Typische Fahrten ab Warsow</h3>
+  <table class="ex ziele"><thead><tr><th scope="col" data-i18n="p.t.dest">Ziel</th><th scope="col" data-i18n="p.t.dist">Strecke</th><th scope="col" data-i18n="p.fact.drive">Fahrzeit</th><th scope="col" data-i18n="p.t.fare">Tagtarif</th></tr></thead><tbody>
+      <tr><th scope="row" data-i18n="p.z.bahnhof">Bahnhof Hagenow Land</th><td data-label="Strecke" data-i18n-attr="data-label:p.t.dist">16,3 km</td><td data-label="Fahrzeit" data-i18n-attr="data-label:p.fact.drive"><span data-i18n="p.t.min" data-i18n-vars='{"min":18}'>ca. 18 Min.</span></td><td data-label="Tagtarif" data-i18n-attr="data-label:p.t.fare"><span data-i18n="p.t.price" data-i18n-vars='{"preis":49.5}'>ca. 49,50&nbsp;€</span></td></tr>
+      <tr><th scope="row" data-i18n="p.z.klinik">Klinikum Hagenow</th><td data-label="Strecke" data-i18n-attr="data-label:p.t.dist">14,9 km</td><td data-label="Fahrzeit" data-i18n-attr="data-label:p.fact.drive"><span data-i18n="p.t.min" data-i18n-vars='{"min":17}'>ca. 17 Min.</span></td><td data-label="Tagtarif" data-i18n-attr="data-label:p.t.fare"><span data-i18n="p.t.price" data-i18n-vars='{"preis":45.9}'>ca. 45,90&nbsp;€</span></td></tr>
+      <tr><th scope="row">Helios Kliniken Schwerin</th><td data-label="Strecke" data-i18n-attr="data-label:p.t.dist">20,3 km</td><td data-label="Fahrzeit" data-i18n-attr="data-label:p.fact.drive"><span data-i18n="p.t.min" data-i18n-vars='{"min":25}'>ca. 25 Min.</span></td><td data-label="Tagtarif" data-i18n-attr="data-label:p.t.fare"><span data-i18n="p.t.vor">Preis vor Fahrtantritt</span></td></tr></tbody></table>
+  <p class="small" data-i18n="p.t.note">Preise nach dem Taxitarif (Tagtarif, ohne Zuschläge und Wartezeit). Schwerin liegt außerhalb unseres Pflichtfahrgebiets, dort nennen wir Ihnen den Preis vor Fahrtantritt.</p>
 </div></section>
 
 <section class="steps" aria-labelledby="h-faq"><div class="wrap">
-  <span class="eyebrow">Häufige Fragen</span>
-  <h2 id="h-faq">Taxi Warsow: Fragen und Antworten.</h2>
-  <h3>Wie bestelle ich ein Taxi in Warsow?</h3><p>Rufen Sie uns unter 03883 723240 an oder senden Sie die Fahrtanfrage oben auf dieser Seite. Der Abholort Warsow ist bereits eingetragen. Wir bestätigen telefonisch.</p>
-  <h3>Wie weit ist es von Warsow nach Hagenow?</h3><p>Die Fahrstrecke zwischen Warsow und unserem Standort in Hagenow beträgt etwa 15,2 km, die Fahrzeit rund 17 Minuten.</p>
-  <h3>Was kostet eine Taxifahrt von Warsow nach Hagenow?</h3><p>Nach dem Taxitarif (Tagtarif, ohne Zuschläge und Wartezeit) rund 46,70 € für etwa 15,2 km. Den Preis für Ihre genaue Strecke zeigt der Preisrechner.</p>
-  <h3>Wie komme ich von Warsow zum Bahnhof Hagenow?</h3><p>Zum Bahnhof Hagenow Land sind es ab Warsow etwa 16,3 km, die Fahrt dauert rund 18 Minuten und kostet nach dem Tagtarif etwa 49,50 €. Bestellen Sie das Taxi gern vorab unter 03883 723240.</p>
-  <h3>Fahren Sie in Warsow auch Krankenfahrten?</h3><p>Ja, für alle Krankenkassen. Zum Klinikum Hagenow sind es ab Warsow etwa 14,9 km (rund 17 Minuten), zu den Helios Kliniken Schwerin etwa 20,3 km (rund 25 Minuten). Wir fahren außerdem Kur- und Rehafahrten, Fahrten zur Chemo- und Bestrahlungstherapie sowie Behindertentransporte.</p>
+  <span class="eyebrow" data-i18n="p.faq.eyebrow">Häufige Fragen</span>
+  <h2 id="h-faq" data-i18n="p.faq.h2" data-i18n-vars='{"name":"Warsow"}'>Taxi Warsow: Fragen und Antworten.</h2>
+  <h3 data-i18n="p.q1" data-i18n-vars='{"name":"Warsow"}'>Wie bestelle ich ein Taxi in Warsow?</h3><p data-i18n="p.a1" data-i18n-vars='{"name":"Warsow","tel":"03883 723240"}'>Rufen Sie uns unter 03883 723240 an oder senden Sie die Fahrtanfrage oben auf dieser Seite. Der Abholort Warsow ist bereits eingetragen. Wir bestätigen telefonisch.</p>
+  <h3 data-i18n="p.q2" data-i18n-vars='{"name":"Warsow"}'>Wie weit ist es von Warsow nach Hagenow?</h3><p data-i18n="p.a2" data-i18n-vars='{"name":"Warsow","km":15.2,"min":17}'>Die Fahrstrecke zwischen Warsow und unserem Standort in Hagenow beträgt etwa 15,2 km, die Fahrzeit rund 17 Minuten.</p>
+  <h3 data-i18n="p.q3" data-i18n-vars='{"name":"Warsow"}'>Was kostet eine Taxifahrt von Warsow nach Hagenow?</h3><p data-i18n="p.a3" data-i18n-vars='{"name":"Warsow","km":15.2,"preis":46.7}'>Nach dem Taxitarif (Tagtarif, ohne Zuschläge und Wartezeit) rund 46,70 € für etwa 15,2 km. Den Preis für Ihre genaue Strecke zeigt der Preisrechner.</p>
+  <h3 data-i18n="p.q4" data-i18n-vars='{"name":"Warsow"}'>Wie komme ich von Warsow zum Bahnhof Hagenow?</h3><p data-i18n="p.a4" data-i18n-vars='{"name":"Warsow","km":16.3,"min":18,"preis":49.5,"tel":"03883 723240"}'>Zum Bahnhof Hagenow Land sind es ab Warsow etwa 16,3 km, die Fahrt dauert rund 18 Minuten und kostet nach dem Tagtarif etwa 49,50 €. Bestellen Sie das Taxi gern vorab unter 03883 723240.</p>
+  <h3 data-i18n="p.q5" data-i18n-vars='{"name":"Warsow"}'>Fahren Sie in Warsow auch Krankenfahrten?</h3><p data-i18n="p.a5" data-i18n-vars='{"name":"Warsow","km1":14.9,"min1":17,"km2":20.3,"min2":25}'>Ja, für alle Krankenkassen. Zum Klinikum Hagenow sind es ab Warsow etwa 14,9 km (rund 17 Minuten), zu den Helios Kliniken Schwerin etwa 20,3 km (rund 25 Minuten). Wir fahren außerdem Kur- und Rehafahrten, Fahrten zur Chemo- und Bestrahlungstherapie sowie Behindertentransporte.</p>
 </div></section>
 
 <section aria-labelledby="h-near"><div class="wrap">
-  <span class="eyebrow">Fahrgebiet</span>
-  <h2 id="h-near">Auch in der Nähe von Warsow.</h2>
-  <p><a href="/taxi-kothendorf/">Taxi Kothendorf</a> · <a href="/taxi-gammelin/">Taxi Gammelin</a> · <a href="/taxi-alt-zachun/">Taxi Alt Zachun</a> · <a href="/taxi-bandenitz/">Taxi Bandenitz</a> · <a href="/">Taxi Hagenow</a> · <a href="/fahrgebiet/">alle Orte im Fahrgebiet</a></p>
+  <span class="eyebrow" data-i18n="nav.area">Fahrgebiet</span>
+  <h2 id="h-near" data-i18n="p.near.h2" data-i18n-vars='{"name":"Warsow"}'>Auch in der Nähe von Warsow.</h2>
+  <p><a href="/taxi-kothendorf/">Taxi Kothendorf</a> · <a href="/taxi-gammelin/">Taxi Gammelin</a> · <a href="/taxi-alt-zachun/">Taxi Alt Zachun</a> · <a href="/taxi-bandenitz/">Taxi Bandenitz</a> · <a href="/">Taxi Hagenow</a> · <a href="/fahrgebiet/" data-i18n="p.near.all">alle Orte im Fahrgebiet</a></p>
 </div></section>
 </main>
-<footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/">Fahrgebiet</a><a href="/preisrechner.html">Preisrechner</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutzrichtlinie</a></span></footer>
+<footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/" data-i18n="nav.area">Fahrgebiet</a><a href="/preisrechner.html" data-i18n="nav.calc">Preisrechner</a><a href="/impressum.html" data-i18n="foot.imprint">Impressum</a><a href="/datenschutz.html" data-i18n="foot.privacy">Datenschutzrichtlinie</a></span></footer>
 <script>var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();var d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);</script>
-<script src="/nav.js" defer></script><script src="/standort.js" defer></script><script src="/anfrage.js" defer></script>
+<script src="/i18n.js" defer></script><script src="/nav.js" defer></script><script src="/standort.js" defer></script><script src="/anfrage.js" defer></script>
 </body></html>

@@ -1,15 +1,15 @@
 <form class="ride" id="fahrt" name="fahrt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html" aria-labelledby="h-ride">
-      <h2 id="h-ride">Fahrt anfragen</h2>
-      <input type="hidden" name="form-name" value="fahrt">
+      <h2 id="h-ride" data-i18n="form.title">Fahrt anfragen</h2>
+      <input type="hidden" name="form-name" value="fahrt"><input type="hidden" name="sprache" value="de">
       <p class="hp"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
-      <label>Abholort*<input name="abholort" required autocomplete="street-address" enterkeyhint="next" placeholder="Straße, Ort" value="{{abholort}}"></label>
-      <div class="two"><label>Name*<input name="name" required autocomplete="name" enterkeyhint="next"></label><label>Telefon*<input name="telefon" type="tel" inputmode="tel" required autocomplete="tel" enterkeyhint="next"></label></div>
-      <label><span>Ziel <span class="opt">(optional, sonst am Telefon)</span></span><input name="ziel" autocomplete="off" enterkeyhint="done" placeholder="Adresse, Klinik, Bahnhof, Flughafen …"></label>
-      <fieldset class="when"><legend>Wann?</legend>
-        <div class="seg"><label class="seg-opt"><input type="radio" name="wann" value="Sofort"><span>Sofort</span></label><label class="seg-opt"><input type="radio" name="wann" value="Später" checked><span>Später / Termin</span></label></div>
-        <div class="three"><label class="later">Datum*<input name="datum" type="date" required id="d"></label><label class="later">Uhrzeit*<input name="uhrzeit" type="time" required></label><label>Pers.*<input name="personen" type="number" inputmode="numeric" min="1" max="8" value="1" required aria-label="Personenzahl"></label></div>
+      <label><span data-i18n="form.pickup">Abholort*</span><input name="abholort" required autocomplete="street-address" enterkeyhint="next" placeholder="Straße, Ort" data-i18n-attr="placeholder:form.pickup.ph" value="{{abholort}}"></label>
+      <div class="two"><label><span data-i18n="form.name">Name*</span><input name="name" required autocomplete="name" enterkeyhint="next"></label><label><span data-i18n="form.phone">Telefon*</span><input name="telefon" type="tel" inputmode="tel" required autocomplete="tel" enterkeyhint="next"></label></div>
+      <label><span><span data-i18n="form.dest">Ziel</span> <span class="opt" data-i18n="form.dest.opt">(optional, sonst am Telefon)</span></span><input name="ziel" autocomplete="off" enterkeyhint="done" placeholder="Adresse, Klinik, Bahnhof, Flughafen …" data-i18n-attr="placeholder:form.dest.ph"></label>
+      <fieldset class="when"><legend data-i18n="form.when">Wann?</legend>
+        <div class="seg"><label class="seg-opt"><input type="radio" name="wann" value="Sofort"><span data-i18n="form.now">Sofort</span></label><label class="seg-opt"><input type="radio" name="wann" value="Später" checked><span data-i18n="form.later">Später / Termin</span></label></div>
+        <div class="three"><label class="later"><span data-i18n="form.date">Datum*</span><input name="datum" type="date" required id="d"></label><label class="later"><span data-i18n="form.time">Uhrzeit*</span><input name="uhrzeit" type="time" required></label><label><span data-i18n="form.pers">Pers.*</span><input name="personen" type="number" inputmode="numeric" min="1" max="8" value="1" required aria-label="Personenzahl" data-i18n-attr="aria-label:form.pers.aria"></label></div>
       </fieldset>
-      <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich habe die <a href="/datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
-      <button class="btn red" type="submit">Fahrt anfragen →</button>
-      <p class="note">Unverbindliche Anfrage – wir bestätigen telefonisch.</p>
+      <label class="consent"><input type="checkbox" name="datenschutz" required><span data-i18n-html="form.consent">Ich habe die <a href="/datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
+      <button class="btn red" type="submit" data-i18n="form.submit">Fahrt anfragen →</button>
+      <p class="note" data-i18n="form.note">Unverbindliche Anfrage – wir bestätigen telefonisch.</p>
     </form>
