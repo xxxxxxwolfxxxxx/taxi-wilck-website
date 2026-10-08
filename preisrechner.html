@@ -8,9 +8,8 @@
 <link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="rechner.css"><link rel="icon" href="img/logo.svg">
 </head>
 <body>
-<a class="skip" href="#main">Zum Inhalt springen</a>
-<header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a>
-<nav class="main" aria-label="Hauptnavigation"><a href="/#leistungen">Leistungen</a><a href="#tarif">Tarif</a><a href="/#kontakt">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call">Anrufen</span></a></nav></header>
+<!--header-start--><a class="skip" href="#main">Zum Inhalt springen</a><header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="/img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a><nav class="main" aria-label="Hauptnavigation">
+<a href="/#leistungen">Leistungen</a><a href="/preisrechner.html">Preisrechner</a><a href="/fahrgebiet/">Fahrgebiet</a><a href="/#ueber-uns">Über uns</a><a href="/#kontakt">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call">Anrufen</span></a></nav></header><!--header-end-->
 
 <main id="main">
 <section class="calc-hero"><div class="wrap">
@@ -77,8 +76,8 @@
     <p>Hinweise zur Berechnung: Die Strecke ermittelt ein Routenplaner; der Taxameter kann davon abweichen. Wechselt der Tarif während einer Fahrt (6:00/22:00 Uhr), regelt die Taxenordnung die Abrechnung nicht ausdrücklich – wir zeigen dann eine Preisspanne. Heiligabend und Silvester sind keine gesetzlichen Feiertage. Stand der Tarifdaten: 01.01.2026.</p></aside>
 </div></section>
 </main>
-<footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutzrichtlinie</a></span></footer>
-<script src="tarif.js"></script><script src="rechner.js"></script>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
-<script src="nav.js" defer></script>
+<script src="/tarif.js"></script><script src="/rechner.js"></script>
+<!--footer-start--><footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/">Fahrgebiet</a><a href="/preisrechner.html">Preisrechner</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutzrichtlinie</a></span></footer>
+<script>var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();var d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);</script>
+<script src="/nav.js" defer></script><!--footer-end-->
 </body></html>

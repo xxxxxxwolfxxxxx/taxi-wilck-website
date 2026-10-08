@@ -1,5 +1,5 @@
 /* Erzeugt die Orts-Landingpages (/taxi-<ort>/), die Fahrgebiet-Übersicht und sitemap.xml
-   aus scripts/orte.json.  Aufruf: node scripts/build-orte.js  (Ergebnis wird committet) */
+   aus scripts/orte.json und befüllt Header/Footer der statischen Seiten (index, preisrechner).  Aufruf: node scripts/build-orte.js  (Ergebnis wird committet) */
 const fs = require('node:fs'), path = require('node:path');
 const T = require('../tarif.js');
 
@@ -15,12 +15,7 @@ const air = (a, b) => { const r = Math.PI / 180, x = Math.sin((b.lat - a.lat) * 
 const nearby = (o, orte) => orte.filter((x) => x.slug !== o.slug).sort((a, b) => air(o, a) - air(o, b)).slice(0, NEARBY);
 const joinDe = (xs) => (xs.length > 1 ? xs.slice(0, -1).join(', ') + ' und ' + xs[xs.length - 1] : xs[0] || '');
 
-const HEADER = `<a class="skip" href="#main">Zum Inhalt springen</a><header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="/img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a><nav class="main" aria-label="Hauptnavigation">
-<a href="/#leistungen">Leistungen</a><a href="/preisrechner.html">Preisrechner</a><a href="/fahrgebiet/">Fahrgebiet</a><a href="/#kontakt">Kontakt</a><a class="btn red" href="${TEL_HREF}">☎ <span class="num">${TEL}</span><span class="call">Anrufen</span></a></nav></header>`;
-
-const FOOTER = `<footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/">Fahrgebiet</a><a href="/preisrechner.html">Preisrechner</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutzrichtlinie</a></span></footer>
-<script>var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();var d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);</script>
-<script src="/nav.js" defer></script>`;
+const { HEADER, FOOTER, injectPartials } = require('./partials.js');
 
 const head = ({ title, desc, canonical, schema, css = [] }) => `<!doctype html>
 <html lang="de">
@@ -228,11 +223,13 @@ function build() {
   const daten = fs.existsSync(DATEN) ? JSON.parse(fs.readFileSync(DATEN, 'utf8')) : { ziele: null, orte: {} };
   for (const o of orte) write(`taxi-${o.slug}/index.html`, renderOrt(o, orte, daten.orte[o.slug], daten.ziele));
   const idx = path.join(ROOT, 'index.html');
-  fs.writeFileSync(idx, injectStartseite(fs.readFileSync(idx, 'utf8'), orte));
+  fs.writeFileSync(idx, injectPartials(injectStartseite(fs.readFileSync(idx, 'utf8'), orte)));
+  const calc = path.join(ROOT, 'preisrechner.html');
+  fs.writeFileSync(calc, injectPartials(fs.readFileSync(calc, 'utf8')));
   write('fahrgebiet/index.html', renderUebersicht(orte));
   write('sitemap.xml', renderSitemap(orte));
   console.log(`${orte.length} Ortsseiten, Übersicht und Sitemap geschrieben.`);
 }
 
 if (require.main === module) build();
-module.exports = { injectStartseite, renderOrt, renderUebersicht, renderSitemap, build };
+module.exports = { injectPartials, injectStartseite, renderOrt, renderUebersicht, renderSitemap, build };

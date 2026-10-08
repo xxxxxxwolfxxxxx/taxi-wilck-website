@@ -12,8 +12,8 @@
 <script>if('scrollRestoration' in history)history.scrollRestoration='manual';addEventListener('pageshow',function(){if(!location.hash)scrollTo(0,0)});</script>
 </head>
 <body>
-<a class="skip" href="#main">Zum Inhalt springen</a><header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a><nav class="main" aria-label="Hauptnavigation">
-<a href="#leistungen">Leistungen</a><a href="preisrechner.html">Preisrechner</a><a href="/fahrgebiet/">Fahrgebiet</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call">Anrufen</span></a></nav></header>
+<!--header-start--><a class="skip" href="#main">Zum Inhalt springen</a><header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="/img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a><nav class="main" aria-label="Hauptnavigation">
+<a href="/#leistungen">Leistungen</a><a href="/preisrechner.html">Preisrechner</a><a href="/fahrgebiet/">Fahrgebiet</a><a href="/#ueber-uns">Über uns</a><a href="/#kontakt">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call">Anrufen</span></a></nav></header><!--header-end-->
 <main id="main">
 <section class="hero" style="padding:0" aria-labelledby="h1">
   <img src="img/flotte-1600.jpg" srcset="img/flotte-1000.jpg 900w, img/flotte-1600.jpg 1600w, img/flotte.jpg 3600w" sizes="100vw" width="3600" height="1537" alt="Taxi Wilck: silberner Großraumbus und beiges Taxi vor Wolkenhimmel" fetchpriority="high">
@@ -144,12 +144,11 @@
   </form>
 </div></section>
 </main>
-<footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/">Fahrgebiet</a><a href="preisrechner.html">Preisrechner</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutzrichtlinie</a></span></footer>
 <script>
-const d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);
-document.getElementById('y').textContent=new Date().getFullYear();
 const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%2)*100+'ms';io.observe(el)});
 </script>
-<script src="nav.js" defer></script>
+<!--footer-start--><footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/">Fahrgebiet</a><a href="/preisrechner.html">Preisrechner</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutzrichtlinie</a></span></footer>
+<script>var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();var d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);</script>
+<script src="/nav.js" defer></script><!--footer-end-->
 </body></html>
