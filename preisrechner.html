@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+<title>Taxi-Preisrechner Hagenow – Taxi Wilck</title>
+<meta name="description" content="Fahrpreis im Taxi Hagenow berechnen: Taxitarif 2026 nach der Taxenordnung des Landkreises Ludwigslust-Parchim, mit Erklärung zu Pflichtfahrgebiet, Anfahrt und Zuschlägen.">
+<link rel="canonical" href="https://www.taxi-wilck.de/preisrechner.html">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#feed01">
+<link rel="stylesheet" href="styles.css"><link rel="stylesheet" href="rechner.css"><link rel="icon" href="img/logo.svg">
+</head>
+<body>
+<a class="skip" href="#main">Zum Inhalt springen</a>
+<header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a>
+<nav class="main" aria-label="Hauptnavigation"><a href="/#leistungen">Leistungen</a><a href="#tarif">Tarif</a><a href="/#kontakt">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call">Anrufen</span></a></nav></header>
+
+<main id="main">
+<section class="calc-hero"><div class="wrap">
+  <span class="eyebrow">Preisrechner</span>
+  <h1>Was kostet meine Taxifahrt?</h1>
+  <p class="lead">Start und Ziel eingeben – wir berechnen den Fahrpreis nach dem amtlichen Taxitarif für Hagenow.</p>
+  <div class="calc-grid">
+    <form id="calc" class="calc">
+      <label>Start<input id="start" required autocomplete="street-address" placeholder="Straße, Hausnummer, Ort" value=""></label>
+      <label>Ziel<input id="ziel" required placeholder="Straße, Hausnummer, Ort" value=""></label>
+      <div class="two"><label>Datum<input id="datum" type="date" required></label><label>Abfahrt (Uhrzeit)<input id="zeit" type="time" required></label></div>
+      <fieldset><legend>Optional</legend>
+        <label class="chk"><input type="checkbox" id="gross"><span>Großraumtaxi – ab 5 Fahrgästen <small>(Zuschlag 8,00 €)</small></span></label>
+        <label class="chk"><input type="checkbox" id="rolli"><span>Rollstuhltransport <small>(Zuschlag 19,00 €, nur im umgerüsteten Fahrzeug)</small></span></label>
+        <label class="chk"><input type="checkbox" id="umsetz"><span>Umsetzen aus dem Rollstuhl erforderlich <small>(2 Transportpersonen, Zuschlag 38,00 €)</small></span></label>
+        <label class="chk"><input type="checkbox" id="warte-an"><span>Wartezeit einplanen</span></label>
+        <label id="warte-box" hidden>Wartezeit in Minuten<input id="warte" type="number" min="0" max="600" step="1" value="10"></label>
+      </fieldset>
+      <label class="consent"><input type="checkbox" required><span>Ich bin einverstanden, dass meine Adressen zur Berechnung an die Kartendienste OpenStreetMap (Nominatim) und OSRM übermittelt werden. Siehe <a href="datenschutz.html">Datenschutzrichtlinie</a>.</span></label>
+      <button id="go" class="btn red" type="submit">Preis berechnen →</button>
+    </form>
+    <div class="result-box" aria-live="polite"><div id="result" tabindex="-1"><p class="rnote">Hier erscheint Ihr voraussichtlicher Fahrpreis.</p></div>
+      <div class="two-kinds"><h2>Tarifberechnung ≠ Preiszusage</h2><p>Die Berechnung zeigt, was die Fahrt nach Tarif voraussichtlich kostet. Sie ist <strong>keine Buchung</strong> und keine verbindliche Preiszusage. Bei Fahrten außerhalb des Pflichtfahrgebiets vereinbaren wir den Preis vor Fahrtantritt mit Ihnen.</p><a class="btn" href="/#fahrt">Fahrt anfragen →</a></div>
+    </div>
+  </div>
+</div></section>
+
+<section id="tarif" class="info"><div class="wrap">
+  <span class="eyebrow">Taxitarif Hagenow – gültig seit 01.01.2026</span>
+  <h2>So setzt sich der Fahrpreis zusammen</h2>
+  <div class="tables">
+    <table><caption>Tagtarif · Mo–Sa 6:00–22:00 Uhr</caption><tbody>
+      <tr><th scope="row">Grundpreis</th><td>4,20 €</td></tr>
+      <tr><th scope="row">1.–2. Kilometer</th><td>3,60 € je km</td></tr>
+      <tr><th scope="row">3.–4. Kilometer</th><td>3,10 € je km</td></tr>
+      <tr><th scope="row">ab dem 5. Kilometer</th><td>2,60 € je km</td></tr></tbody></table>
+    <table class="night"><caption>Nacht- sowie Sonn- und Feiertagstarif · Mo–Sa 22:00–6:00 Uhr, Sonn- und gesetzliche Feiertage ganztägig</caption><tbody>
+      <tr><th scope="row">Grundpreis</th><td>4,60 €</td></tr>
+      <tr><th scope="row">1.–2. Kilometer</th><td>3,80 € je km</td></tr>
+      <tr><th scope="row">3.–4. Kilometer</th><td>3,40 € je km</td></tr>
+      <tr><th scope="row">ab dem 5. Kilometer</th><td>3,10 € je km</td></tr></tbody></table>
+  </div>
+  <p class="small">Die Kilometerpreise gelten gestaffelt, nicht für die ganze Strecke. Beispiel Tag, 5 km: 4,20 € + 2 × 3,60 € + 2 × 3,10 € + 1 × 2,60 € = <strong>20,20 €</strong>. Der Taxameter zählt in Schritten von 0,10 €.</p>
+  <h3>Beispielpreise (ohne Wartezeit und Zuschläge)</h3>
+  <table class="ex"><thead><tr><th scope="col">Strecke</th><th scope="col">Tag</th><th scope="col">Nacht / Sonn- und Feiertag</th></tr></thead><tbody>
+    <tr><th scope="row">1 km</th><td>7,80 €</td><td>8,40 €</td></tr><tr><th scope="row">2 km</th><td>11,40 €</td><td>12,20 €</td></tr>
+    <tr><th scope="row">3 km</th><td>14,50 €</td><td>15,60 €</td></tr><tr><th scope="row">5 km</th><td>20,20 €</td><td>22,10 €</td></tr>
+    <tr><th scope="row">10 km</th><td>33,20 €</td><td>37,60 €</td></tr><tr><th scope="row">15 km</th><td>46,20 €</td><td>53,10 €</td></tr>
+    <tr><th scope="row">20 km</th><td>59,20 €</td><td>68,60 €</td></tr></tbody></table>
+
+  <div class="cards">
+    <article><h3>Zuschläge – nur wenn nötig</h3><ul>
+      <li><strong>Großraumtaxi:</strong> einmalig 8,00 € ab dem 5. Fahrgast.</li>
+      <li><strong>Rollstuhl</strong> (umgerüstetes Fahrzeug): 19,00 € je Fahrt.</li>
+      <li><strong>Umsetzen</strong> aus dem Rollstuhl mit zwei Transportpersonen: 38,00 € je Fahrt.</li>
+      <li><strong>Wartezeit</strong> (durch den Fahrauftrag begründet): 45,00 € je Stunde, also 0,75 € je Minute – nur wenn sie tatsächlich anfällt.</li></ul></article>
+    <article><h3>Anfahrt</h3><p>Innerhalb von Hagenow, dem Betriebssitz von Taxi Wilck, berechnen wir <strong>keine Anfahrt</strong>. Wird ein Taxi von außerhalb bestellt und die Fahrt führt über die Gemeindegrenze hinaus, läuft der Taxameter ab Abfahrt am Betriebssitz. Ist Ihr Ziel Hagenow, läuft er erst ab Ihrem Abholort. Wir weisen Sie bei der Bestellung darauf hin.</p></article>
+    <article><h3>Im Pflichtfahrgebiet</h3><p>Für Fahrten in unserem Pflichtfahrgebiet (Altkreis Ludwigslust, u. a. Hagenow, Ludwigslust, Boizenburg, Wittenburg, Zarrentin) gelten die vom Landkreis festgelegten Preise. Sie dürfen weder über- noch unterschritten werden – auch wir können sie nicht selbst bestimmen.</p></article>
+    <article><h3>Außerhalb des Pflichtfahrgebiets</h3><p>Liegt das Ziel außerhalb, kann der Fahrpreis frei vereinbart werden. Wir nennen Ihnen den Preis <strong>vor Fahrtantritt</strong>. Kommt keine Vereinbarung zustande, gelten ersatzweise die Entgelte der Taxenordnung.</p></article>
+  </div>
+
+  <aside class="source"><h3>Quelle und Stand</h3>
+    <p>Maßgeblich ist die <a href="https://www.kreis-lup.de/kreisrecht" target="_blank" rel="noopener">Taxenordnung des Landkreises Ludwigslust-Parchim</a> (Aktuelle Lesefassung, zuletzt geändert durch die 6. Änderungsverordnung vom 03.11.2025, in Kraft seit 01.01.2026), insbesondere § 12 und § 13. Bei Abweichungen gilt immer der amtliche Text.</p>
+    <p>Hinweise zur Berechnung: Die Strecke ermittelt ein Routenplaner; der Taxameter kann davon abweichen. Wechselt der Tarif während einer Fahrt (6:00/22:00 Uhr), regelt die Taxenordnung die Abrechnung nicht ausdrücklich – wir zeigen dann eine Preisspanne. Heiligabend und Silvester sind keine gesetzlichen Feiertage. Stand der Tarifdaten: 01.01.2026.</p></aside>
+</div></section>
+</main>
+<footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutzrichtlinie</a></span></footer>
+<script src="tarif.js"></script><script src="rechner.js"></script>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body></html>

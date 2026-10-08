@@ -12,7 +12,7 @@
 </head>
 <body>
 <a class="skip" href="#main">Zum Inhalt springen</a><header class="top"><a class="logo" href="/" aria-label="Taxi Wilck – Startseite"><img src="img/logo.svg" alt="Taxi Wilck – Taxi- und Fuhrbetrieb, Inh. Yvonne Schomann" width="1200" height="424"></a><nav class="main" aria-label="Hauptnavigation">
-<a href="#leistungen">Leistungen</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call">Anrufen</span></a></nav></header>
+<a href="#leistungen">Leistungen</a><a href="preisrechner.html">Preisrechner</a><a href="#ueber-uns">Über uns</a><a href="#kontakt">Kontakt</a><a class="btn red" href="tel:03883723240">☎ <span class="num">03883 723240</span><span class="call">Anrufen</span></a></nav></header>
 <main id="main">
 <section class="hero" style="padding:0" aria-labelledby="h1">
   <img src="img/flotte-1600.jpg" srcset="img/flotte-1000.jpg 900w, img/flotte-1600.jpg 1600w, img/flotte.jpg 3600w" sizes="100vw" width="3600" height="1537" alt="Taxi Wilck: silberner Großraumbus und beiges Taxi vor Wolkenhimmel" fetchpriority="high">
@@ -21,6 +21,7 @@
       <h1 id="h1">Taxi in Hagenow – <b>mit dem Doppel-W.</b></h1>
       <p>Pünktlich und zuverlässig – seit über 30 Jahren in und um Hagenow.</p>
       <div><a class="decal" href="tel:03883723240" aria-label="Jetzt anrufen: 03883 723240"><span>Tel.</span><span>03883 72 32 40</span></a></div>
+      <a class="rating-chip" href="#bewertungen"><span class="stars" aria-hidden="true">★★★★★</span> <b>4,6</b> bei Google · 76 Rezensionen</a>
     </div>
     <form class="ride" id="fahrt" name="fahrt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html" aria-labelledby="h-ride">
       <h2 id="h-ride">Fahrt anfragen</h2>
@@ -57,8 +58,8 @@
   <span class="eyebrow">Unsere Fahrzeuge</span>
   <h2 id="h-fleet">Das passende Fahrzeug für jede Fahrt.</h2>
   <div class="cars">
-    <article class="car rv"><div class="shot taxi" role="img" aria-label="Taxi von Taxi Wilck"></div><div class="body"><h3>Taxi</h3><p>Für Krankenfahrten, Flughafen- und Bahntransfer, Schul- und Kindergartenfahrten und alle Fahrten in und um Hagenow.</p><a class="btn" href="#fahrt">Taxi anfragen →</a></div></article>
-    <article class="car rv"><div class="shot van" role="img" aria-label="Großraumbus von Taxi Wilck"></div><div class="body"><h3>Großraumbus</h3><p>Großraumtransporte bis 8 Personen – für Gruppen, Familien und Fahrten mit mehr Gepäck.</p><a class="btn" href="#fahrt">Bus anfragen →</a></div></article>
+    <article class="car rv"><div class="shot taxi" role="img" aria-label="Taxi von Taxi Wilck"></div><div class="body"><h3>Taxi <small>VW Touran</small></h3><p>Für Krankenfahrten, Flughafen- und Bahntransfer, Schul- und Kindergartenfahrten und alle Fahrten in und um Hagenow.</p><a class="btn" href="#fahrt">Taxi anfragen →</a></div></article>
+    <article class="car rv"><div class="shot van" role="img" aria-label="Großraumbus von Taxi Wilck"></div><div class="body"><h3>Großraumbus <small>VW T6</small></h3><p>Großraumtransporte bis 8 Personen – für Gruppen, Familien und Fahrten mit mehr Gepäck.</p><a class="btn" href="#fahrt">Bus anfragen →</a></div></article>
   </div>
 </div></section>
 
@@ -81,6 +82,22 @@
       <li>Kleintransporte</li>
     </ul></div>
   </div>
+</div></section>
+
+
+<section class="reviews" id="bewertungen" aria-labelledby="h-rev"><div class="wrap">
+  <div class="rev-head rv">
+    <div><span class="eyebrow">Bewertungen</span><h2 id="h-rev">Das sagen unsere Fahrgäste.</h2></div>
+    <a class="score" href="https://www.google.com/maps/place/Taxi-+und+Fuhrbetrieb+Wilfried+Wilck+%7C+Inh.+Yvonne+Schomann/@53.4249095,11.1907522,17z/data=!4m8!3m7!1s0x47ae724bf3d91885:0xf6debcad2d37729e!8m2!3d53.4249095!4d11.1907522!9m1!1b1" target="_blank" rel="noopener" aria-label="4,6 von 5 Sternen bei Google, 76 Rezensionen – auf Google ansehen">
+      <strong>4,6</strong><span class="stars" aria-hidden="true">★★★★★</span><small>76 Google-Rezensionen<br>Stand Oktober 2026</small>
+    </a>
+  </div>
+  <div class="quotes">
+    <figure class="rv"><blockquote>Sehr netter Chef, gute Autos, pünktlich und sehr kundenorientiert.</blockquote><figcaption><span class="stars" aria-hidden="true">★★★★★</span> Google-Rezension</figcaption></figure>
+    <figure class="rv"><blockquote>Ein super und schneller Service, alles hat reibungslos und spontan geklappt.</blockquote><figcaption><span class="stars" aria-hidden="true">★★★★★</span> Google-Rezension</figcaption></figure>
+    <figure class="rv"><blockquote>Taxi aus dem Zug bestellt, Fahrzeug wartete schon auf mich bei der Ankunft.</blockquote><figcaption><span class="stars" aria-hidden="true">★★★★★</span> Google-Rezension</figcaption></figure>
+  </div>
+  <p class="rev-link rv"><a class="btn" href="https://www.google.com/maps/place/Taxi-+und+Fuhrbetrieb+Wilfried+Wilck+%7C+Inh.+Yvonne+Schomann/@53.4249095,11.1907522,17z/data=!4m8!3m7!1s0x47ae724bf3d91885:0xf6debcad2d37729e!8m2!3d53.4249095!4d11.1907522!9m1!1b1" target="_blank" rel="noopener">Alle Rezensionen bei Google lesen ↗</a></p>
 </div></section>
 
 <section class="about" id="ueber-uns" aria-labelledby="h-about"><div class="grid">
@@ -111,7 +128,7 @@
   </form>
 </div></section>
 </main>
-<footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutzrichtlinie</a></span></footer>
+<footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="preisrechner.html">Preisrechner</a><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutzrichtlinie</a></span></footer>
 <script>
 const d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);
 document.getElementById('y').textContent=new Date().getFullYear();
