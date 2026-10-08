@@ -24,18 +24,21 @@
       <div><a class="decal" href="tel:03883723240" aria-label="Jetzt anrufen: 03883 723240"><span>Tel.</span><span>03883 72 32 40</span></a></div>
       <a class="rating-chip" href="#bewertungen"><svg class="gicon" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.54-.19-2.27H12v4.51h6.47c-.29 1.48-1.14 2.73-2.4 3.58v3h3.86c2.26-2.09 3.56-5.17 3.56-8.82z"/><path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.86-3c-1.08.72-2.45 1.16-4.07 1.16-3.13 0-5.78-2.11-6.73-4.96H1.29v3.09C3.26 21.3 7.31 24 12 24z"/><path fill="#FBBC05" d="M5.27 14.29c-.25-.72-.38-1.49-.38-2.29s.14-1.57.38-2.29V6.62H1.29C.47 8.24 0 10.06 0 12s.47 3.76 1.29 5.38l3.98-3.09z"/><path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.31 0 3.26 2.7 1.29 6.62l3.98 3.09C6.22 6.86 8.87 4.75 12 4.75z"/></svg><span class="stars g5" aria-hidden="true">★★★★★</span> <b>4,6</b> · 76 Google-Bewertungen</a>
     </div>
-    <form class="ride" id="fahrt" name="fahrt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html" aria-labelledby="h-ride">
+    <!--form-start--><form class="ride" id="fahrt" name="fahrt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html" aria-labelledby="h-ride">
       <h2 id="h-ride">Fahrt anfragen</h2>
       <input type="hidden" name="form-name" value="fahrt">
       <p class="hp"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
-      <div class="two"><label>Name*<input name="name" required autocomplete="name"></label><label>Telefon*<input name="telefon" type="tel" required autocomplete="tel"></label></div>
-      <label>Abholort*<input name="abholort" required autocomplete="street-address" placeholder="Straße, Ort"></label>
-      <label>Ziel*<input name="ziel" required placeholder="Adresse, Klinik, Bahnhof, Flughafen …"></label>
-      <div class="three"><label>Datum*<input name="datum" type="date" required id="d"></label><label>Uhrzeit*<input name="uhrzeit" type="time" required></label><label>Pers.*<input name="personen" type="number" min="1" max="8" value="1" required aria-label="Personenzahl"></label></div>
-      <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich habe die <a href="datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
+      <label>Abholort*<input name="abholort" required autocomplete="street-address" enterkeyhint="next" placeholder="Straße, Ort" value=""></label>
+      <div class="two"><label>Name*<input name="name" required autocomplete="name" enterkeyhint="next"></label><label>Telefon*<input name="telefon" type="tel" inputmode="tel" required autocomplete="tel" enterkeyhint="next"></label></div>
+      <label><span>Ziel <span class="opt">(optional, sonst am Telefon)</span></span><input name="ziel" autocomplete="off" enterkeyhint="done" placeholder="Adresse, Klinik, Bahnhof, Flughafen …"></label>
+      <fieldset class="when"><legend>Wann?</legend>
+        <div class="seg"><label class="seg-opt"><input type="radio" name="wann" value="Sofort"><span>Sofort</span></label><label class="seg-opt"><input type="radio" name="wann" value="Später" checked><span>Später / Termin</span></label></div>
+        <div class="three"><label class="later">Datum*<input name="datum" type="date" required id="d"></label><label class="later">Uhrzeit*<input name="uhrzeit" type="time" required></label><label>Pers.*<input name="personen" type="number" inputmode="numeric" min="1" max="8" value="1" required aria-label="Personenzahl"></label></div>
+      </fieldset>
+      <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich habe die <a href="/datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
       <button class="btn red" type="submit">Fahrt anfragen →</button>
       <p class="note">Unverbindliche Anfrage – wir bestätigen telefonisch.</p>
-    </form>
+    </form><!--form-end-->
   </div>
 </section>
 <div class="facts" role="list">
@@ -150,5 +153,5 @@ document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%2)
 </script>
 <!--footer-start--><footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/">Fahrgebiet</a><a href="/preisrechner.html">Preisrechner</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutzrichtlinie</a></span></footer>
 <script>var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();var d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);</script>
-<script src="/nav.js" defer></script><script src="/standort.js" defer></script><!--footer-end-->
+<script src="/nav.js" defer></script><script src="/standort.js" defer></script><script src="/anfrage.js" defer></script><!--footer-end-->
 </body></html>

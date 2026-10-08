@@ -27,10 +27,13 @@
       <h2 id="h-ride">Fahrt anfragen</h2>
       <input type="hidden" name="form-name" value="fahrt">
       <p class="hp"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
-      <div class="two"><label>Name*<input name="name" required autocomplete="name"></label><label>Telefon*<input name="telefon" type="tel" required autocomplete="tel"></label></div>
-      <label>Abholort*<input name="abholort" required autocomplete="street-address" placeholder="Straße, Ort" value="19230 Steegen"></label>
-      <label>Ziel*<input name="ziel" required placeholder="Adresse, Klinik, Bahnhof, Flughafen …"></label>
-      <div class="three"><label>Datum*<input name="datum" type="date" required id="d"></label><label>Uhrzeit*<input name="uhrzeit" type="time" required></label><label>Pers.*<input name="personen" type="number" min="1" max="8" value="1" required aria-label="Personenzahl"></label></div>
+      <label>Abholort*<input name="abholort" required autocomplete="street-address" enterkeyhint="next" placeholder="Straße, Ort" value="19230 Steegen"></label>
+      <div class="two"><label>Name*<input name="name" required autocomplete="name" enterkeyhint="next"></label><label>Telefon*<input name="telefon" type="tel" inputmode="tel" required autocomplete="tel" enterkeyhint="next"></label></div>
+      <label><span>Ziel <span class="opt">(optional, sonst am Telefon)</span></span><input name="ziel" autocomplete="off" enterkeyhint="done" placeholder="Adresse, Klinik, Bahnhof, Flughafen …"></label>
+      <fieldset class="when"><legend>Wann?</legend>
+        <div class="seg"><label class="seg-opt"><input type="radio" name="wann" value="Sofort"><span>Sofort</span></label><label class="seg-opt"><input type="radio" name="wann" value="Später" checked><span>Später / Termin</span></label></div>
+        <div class="three"><label class="later">Datum*<input name="datum" type="date" required id="d"></label><label class="later">Uhrzeit*<input name="uhrzeit" type="time" required></label><label>Pers.*<input name="personen" type="number" inputmode="numeric" min="1" max="8" value="1" required aria-label="Personenzahl"></label></div>
+      </fieldset>
       <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich habe die <a href="/datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
       <button class="btn red" type="submit">Fahrt anfragen →</button>
       <p class="note">Unverbindliche Anfrage – wir bestätigen telefonisch.</p>
@@ -75,5 +78,5 @@
 </main>
 <footer><span>© <span id="y">2026</span> Taxi- und Fuhrbetrieb Wilfried Wilck</span><span><a href="/fahrgebiet/">Fahrgebiet</a><a href="/preisrechner.html">Preisrechner</a><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutzrichtlinie</a></span></footer>
 <script>var y=document.getElementById('y');if(y)y.textContent=new Date().getFullYear();var d=document.getElementById('d');if(d)d.min=new Date().toISOString().slice(0,10);</script>
-<script src="/nav.js" defer></script><script src="/standort.js" defer></script>
+<script src="/nav.js" defer></script><script src="/standort.js" defer></script><script src="/anfrage.js" defer></script>
 </body></html>

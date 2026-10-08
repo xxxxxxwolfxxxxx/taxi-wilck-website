@@ -15,7 +15,7 @@ const air = (a, b) => { const r = Math.PI / 180, x = Math.sin((b.lat - a.lat) * 
 const nearby = (o, orte) => orte.filter((x) => x.slug !== o.slug).sort((a, b) => air(o, a) - air(o, b)).slice(0, NEARBY);
 const joinDe = (xs) => (xs.length > 1 ? xs.slice(0, -1).join(', ') + ' und ' + xs[xs.length - 1] : xs[0] || '');
 
-const { HEADER, FOOTER, injectPartials } = require('./partials.js');
+const { HEADER, FOOTER, rideForm, injectPartials } = require('./partials.js');
 
 const head = ({ title, desc, canonical, schema, css = [] }) => `<!doctype html>
 <html lang="de">
@@ -114,18 +114,7 @@ function renderOrt(o, orte, info = null, ziele = null) {
       <p>Wir holen Sie in ${esc(o.name)} ab – pünktlich und zuverlässig, seit über 30 Jahren aus Hagenow.</p>
       <div><a class="decal" href="${TEL_HREF}" aria-label="Jetzt anrufen: ${TEL}"><span>Tel.</span><span>03883 72 32 40</span></a></div>
     </div>
-    <form class="ride" id="fahrt" name="fahrt" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/danke.html" aria-labelledby="h-ride">
-      <h2 id="h-ride">Fahrt anfragen</h2>
-      <input type="hidden" name="form-name" value="fahrt">
-      <p class="hp"><label>Nicht ausfüllen: <input name="bot-field"></label></p>
-      <div class="two"><label>Name*<input name="name" required autocomplete="name"></label><label>Telefon*<input name="telefon" type="tel" required autocomplete="tel"></label></div>
-      <label>Abholort*<input name="abholort" required autocomplete="street-address" placeholder="Straße, Ort" value="${esc(abholort)}"></label>
-      <label>Ziel*<input name="ziel" required placeholder="Adresse, Klinik, Bahnhof, Flughafen …"></label>
-      <div class="three"><label>Datum*<input name="datum" type="date" required id="d"></label><label>Uhrzeit*<input name="uhrzeit" type="time" required></label><label>Pers.*<input name="personen" type="number" min="1" max="8" value="1" required aria-label="Personenzahl"></label></div>
-      <label class="consent"><input type="checkbox" name="datenschutz" required><span>Ich habe die <a href="/datenschutz.html">Datenschutzrichtlinie</a> gelesen und verstanden.*</span></label>
-      <button class="btn red" type="submit">Fahrt anfragen →</button>
-      <p class="note">Unverbindliche Anfrage – wir bestätigen telefonisch.</p>
-    </form>
+    ${rideForm(abholort)}
   </div>
 </section>
 <div class="facts" role="list">
