@@ -43,7 +43,7 @@ nav.main .btn{margin-left:.6rem;padding:.65rem 1.15rem}
 .btn.big{font-size:1.1rem;padding:1rem 1.8rem}
 
 /* ---------- Hero ---------- */
-.hero{position:relative;min-height:min(84svh,800px);display:grid;align-items:center;color:#fff;isolation:isolate;background:#222}
+.hero{position:relative;overflow:hidden;min-height:min(84svh,800px);display:grid;align-items:center;color:#fff;isolation:isolate;background:#222}
 .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 70%;z-index:-2;animation:zoom 14s ease-out both}
 .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:
   linear-gradient(90deg,rgba(12,11,6,.82) 0%,rgba(12,11,6,.55) 45%,rgba(12,11,6,.12) 100%),
@@ -204,11 +204,12 @@ form .btn{cursor:pointer;font-size:1.08rem;font-family:inherit}
 
 /* Footer */
 footer{background:var(--ink);color:#d6d6cc;padding:1.8rem var(--pad);display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.9rem;border-top:6px solid var(--yellow)}
-footer a{margin-left:1.2rem;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
+footer>span:last-child{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem}
+footer a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.25)}
 footer a:hover{color:var(--yellow);border-color:var(--yellow)}
 
 /* Rechtstexte */
-.legal{max-width:760px;margin:0 auto;padding:4rem var(--pad)}
+.legal{overflow-wrap:anywhere;hyphens:auto;max-width:760px;margin:0 auto;padding:4rem var(--pad)}
 .legal h1{font-size:clamp(2.4rem,6vw,4rem);margin-bottom:2rem}
 .legal h2{font-size:1.5rem;margin:2rem 0 .6rem;line-height:1.1}
 .legal p{color:var(--grey);margin-bottom:.7rem}
@@ -221,6 +222,11 @@ footer a:hover{color:var(--yellow);border-color:var(--yellow)}
 .burger,.drawer,.actionbar{display:none}
 
 /* ---------- Responsive ---------- */
+@media(max-width:1020px){
+  nav.main a:not(.btn){padding:.5rem .5rem;font-size:.88rem}nav.main .btn{margin-left:.2rem;padding:.6rem .9rem}
+  .logo img{height:48px}
+  .gcard{grid-template-columns:auto 1fr}.gcard .btn{grid-column:1/-1}
+}
 @media(max-width:860px){
   nav.main a:not(.btn){display:none}
   .facts{grid-template-columns:1fr}.facts div{padding-block:1rem}.facts div+div::before{left:var(--pad);right:var(--pad);top:0;bottom:auto;width:auto;height:2px}
