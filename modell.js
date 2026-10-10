@@ -1,12 +1,12 @@
 /* 3D-Modell im Hero: Drehteller aus 120 Einzelbildern (img/modell/t000–t119.webp).
-   Zeigt sofort ein Standbild; die übrigen Bilder werden erst nach dem Laden der Seite geholt.
-   Dreht sich langsam, lässt sich mit Maus oder Finger drehen. Bei reduzierter Bewegung oder
+   Zeigt sofort ein Standbild; die übrigen Bilder werden erst nach dem Laden der Seite geholt,
+   die Drehung startet schon nach den ersten Bildern. Dreht sich langsam, lässt sich mit Maus oder Finger drehen. Bei reduzierter Bewegung oder
    Datensparmodus bleibt es beim Standbild. */
 (function () {
   var box = document.querySelector('[data-model]');
   if (!box) return;
   var img = box.querySelector('img');
-  var N = 120, START = 15, FPS = 15, PX = 6;
+  var N = 120, START = 15, FPS = 15, PX = 6, MIN_FRAMES = 4, WORKERS = 6;
   var base = img.getAttribute('src').replace(/t\d{3}\.webp$/, 't');
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   var save = navigator.connection && navigator.connection.saveData;
@@ -34,14 +34,16 @@
       var im = new Image();
       im.src = url(i);
       var p = im.decode ? im.decode() : new Promise(function (ok, err) { im.onload = ok; im.onerror = err; });
-      return p.then(function () { frames[i] = im; done++; }, function () {}).then(worker);
+      return p.then(function () { frames[i] = im; done++; go(); }, function () {}).then(worker);
     }
-    Promise.all([worker(), worker(), worker()]).then(function () {
-      if (done < N) return; // unvollständig: Standbild behalten
+    // Dreht sofort, sobald die ersten Bilder da sind; show() überspringt noch fehlende Bilder.
+    function go() {
+      if (ready || done < MIN_FRAMES) return;
       ready = true;
       box.classList.add('live');
       timer = setInterval(tick, 1000 / FPS);
-    });
+    }
+    for (var w = 0; w < WORKERS; w++) worker();
   }
 
   if ('IntersectionObserver' in window) {
@@ -61,6 +63,6 @@
   box.addEventListener('pointerup', end);
   box.addEventListener('pointercancel', end);
 
-  function start() { ('requestIdleCallback' in window) ? requestIdleCallback(load, { timeout: 2000 }) : setTimeout(load, 300); }
+  function start() { ('requestIdleCallback' in window) ? requestIdleCallback(load, { timeout: 300 }) : setTimeout(load, 300); }
   if (document.readyState === 'complete') start(); else addEventListener('load', start);
 })();
