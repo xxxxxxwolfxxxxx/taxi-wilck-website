@@ -6,7 +6,6 @@
 "nav.about": "About us",
 "nav.contact": "Contact",
 "nav.call": "Call",
-"nav.fleet": "Vehicles",
 "nav.reviews": "Reviews",
 "nav.menu.open": "Open menu",
 "nav.menu.close": "Close menu",
@@ -66,14 +65,6 @@
 "step2.p": "We get back to you and agree on time and pick-up address.",
 "step3.t": "We pick you up",
 "step3.p": "On time at your door – and safely to your destination.",
-"fleet.eyebrow": "Our vehicles",
-"fleet.h2": "The right vehicle for every ride.",
-"car.taxi": "Taxi",
-"car.taxi.p": "For patient transport, airport and station transfers, school and kindergarten runs and all trips in and around Hagenow.",
-"car.taxi.btn": "Request a taxi →",
-"car.van": "Minibus",
-"car.van.p": "Transport for up to 8 people – for groups, families and trips with more luggage.",
-"car.van.btn": "Request a minibus →",
 "lst.eyebrow": "Our services",
 "lst.h2": "At 03883-723240 we take care of:",
 "lst.health": "Health &amp; care",
@@ -165,5 +156,6 @@
 "pc.hint": "Your estimated fare will appear here.",
 "pc.t2.h": "Tariff calculation ≠ price guarantee",
 "pc.t2.p": "The calculation shows what the ride will probably cost according to the tariff. It is <strong>not a booking</strong> and not a binding price quote. For rides outside the statutory service area we agree the price with you before the ride.",
-"pc.note": "The result display and the legal notes appear in German."
+"pc.note": "The result display and the legal notes appear in German.",
+"model.alt": "Taxi Wilck: taxi as a 3D model"
 }

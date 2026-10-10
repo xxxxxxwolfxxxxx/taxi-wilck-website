@@ -16,6 +16,6 @@ Tests: `npm test` (Node ≥ 20, keine Abhängigkeiten) · Link-/Meta-Prüfung: `
 
 Deutsch steht im HTML (SEO), alle anderen Sprachen kommen clientseitig aus `i18n/<code>.json` (nur die gewählte Datei wird geladen).
 Auszeichnung im HTML: `data-i18n="schlüssel"` (Text/HTML), `data-i18n-attr="attr:schlüssel"`, `data-i18n-vars='{"name":…}'` für `{platzhalter}`.
-Reihenfolge der Rückfälle: Zielsprache → `en.json` → Deutsch. Vollständig: en, pl, ru, uk, tr, ar. Bestell-Kern: fr, es, it, nl, cs, hu, ro, bg, el, pt, da, sv.
+Reihenfolge der Rückfälle: Zielsprache → `en.json` → Deutsch. Alle 18 Sprachen sind vollständig; die Tests prüfen Schlüssel, Platzhalter und Links gegen `en.json`.
 Neue Sprache: Datei `i18n/xx.json` anlegen, Eintrag in `i18n.js` (`LANGS`) und Flagge `img/flags/<land>.svg` ergänzen. Die Tests (`tests/i18n.test.js`) prüfen Schlüssel, Platzhalter und Links.
 Flaggen: MIT-Lizenz, aus dem Paket „flag-icons“ (Spanien vereinfacht).

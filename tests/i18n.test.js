@@ -3,8 +3,8 @@ const fs = require('node:fs'), path = require('node:path');
 const SITE = path.join(__dirname, '..');
 const read = (f) => fs.readFileSync(path.join(SITE, f), 'utf8');
 const en = JSON.parse(read('i18n/en.json'));
-const FULL = ['pl', 'ru', 'uk', 'tr', 'ar'];
-const CORE = ['fr', 'es', 'it', 'nl', 'cs', 'hu', 'ro', 'bg', 'el', 'pt', 'da', 'sv'];
+const FULL = ['pl', 'ru', 'uk', 'tr', 'ar', 'fr', 'es', 'it', 'nl', 'cs', 'hu', 'ro', 'bg', 'el', 'pt', 'da', 'sv'];
+const CORE = [];
 const vars = (s) => [...s.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort().join(',');
 const links = (s) => (s.match(/href="[^"]+"/g) || []).sort().join(',');
 
@@ -32,6 +32,7 @@ test('Vollständige Sprachen haben alle Schlüssel, Platzhalter und Links wie En
   for (const c of FULL) {
     const d = JSON.parse(read(`i18n/${c}.json`));
     assert.deepEqual(Object.keys(en).filter((k) => !(k in d)), [], c + ' fehlt');
+    assert.deepEqual(Object.keys(d).filter((k) => !(k in en)), [], c + ' unbekannt');
     for (const k of Object.keys(d)) { assert.equal(vars(d[k]), vars(en[k]), `${c}:${k} Platzhalter`); assert.equal(links(d[k]), links(en[k]), `${c}:${k} Links`); }
   }
 });

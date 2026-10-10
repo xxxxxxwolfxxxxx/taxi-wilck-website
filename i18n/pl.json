@@ -6,7 +6,6 @@
 "nav.about": "O nas",
 "nav.contact": "Kontakt",
 "nav.call": "Zadzwoń",
-"nav.fleet": "Pojazdy",
 "nav.reviews": "Opinie",
 "nav.menu.open": "Otwórz menu",
 "nav.menu.close": "Zamknij menu",
@@ -66,14 +65,6 @@
 "step2.p": "Skontaktujemy się z Tobą i ustalimy czas oraz miejsce odbioru.",
 "step3.t": "Odbieramy Cię",
 "step3.p": "Punktualnie pod Twoimi drzwiami – i bezpiecznie do celu.",
-"fleet.eyebrow": "Nasze pojazdy",
-"fleet.h2": "Odpowiedni pojazd na każdy przejazd.",
-"car.taxi": "Taxi",
-"car.taxi.p": "Na przejazdy medyczne, transfery na lotnisko i dworzec, dowóz dzieci do szkoły i przedszkola oraz wszystkie kursy w Hagenow i okolicy.",
-"car.taxi.btn": "Zamów taxi →",
-"car.van": "Bus",
-"car.van.p": "Przewóz do 8 osób – dla grup, rodzin i podróży z większym bagażem.",
-"car.van.btn": "Zamów busa →",
 "lst.eyebrow": "Nasza oferta",
 "lst.h2": "Pod numerem 03883-723240 zajmiemy się:",
 "lst.health": "Zdrowie &amp; opieka",
@@ -165,5 +156,6 @@
 "pc.hint": "Tutaj pojawi się przewidywana cena.",
 "pc.t2.h": "Obliczenie taryfy ≠ gwarancja ceny",
 "pc.t2.p": "Obliczenie pokazuje, ile przejazd będzie prawdopodobnie kosztować według taryfy. To <strong>nie jest rezerwacja</strong> ani wiążąca oferta cenowa. Przy przejazdach poza obowiązkowym obszarem kursowania cenę ustalamy z Tobą przed przejazdem.",
-"pc.note": "Wynik obliczenia i uwagi prawne są wyświetlane po niemiecku."
+"pc.note": "Wynik obliczenia i uwagi prawne są wyświetlane po niemiecku.",
+"model.alt": "Taxi Wilck: taksówka jako model 3D"
 }
