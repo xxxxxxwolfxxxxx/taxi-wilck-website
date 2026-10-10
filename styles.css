@@ -48,10 +48,10 @@ nav.main .btn{margin-left:.6rem;padding:.6rem 1.1rem}
 
 /* ---------- Hero ---------- */
 .hero{position:relative;overflow:hidden;display:grid;align-items:center;color:var(--text);isolation:isolate;background:radial-gradient(55% 60% at 28% 78%,rgba(243,211,74,.07),transparent 70%),var(--bg)}
-.hero .in{padding:clamp(2rem,3.5vw,3.2rem) var(--pad) clamp(2rem,3.5vw,3rem);max-width:1360px;width:100%;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;grid-template-areas:"txt ride" "model ride";grid-template-rows:auto 1fr;column-gap:clamp(1.5rem,4vw,4.5rem);row-gap:0;align-items:start}
+.hero .in{padding:clamp(2rem,3.5vw,3.2rem) var(--pad) clamp(2rem,3.5vw,3rem);max-width:1360px;width:100%;margin:0 auto;display:grid;grid-template-columns:1.2fr .8fr;grid-template-areas:"txt ride";grid-template-rows:auto;column-gap:clamp(1.5rem,4vw,4.5rem);row-gap:0;align-items:start}
 .hero-txt{grid-area:txt}.hero .ride{grid-area:ride;align-self:center}
 /* 3D-Modell (Drehteller, siehe modell.js) */
-.model{grid-area:model;position:relative;align-self:end;margin:clamp(-1rem,-1vw,0rem) 0 0;max-width:780px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.model{position:relative;margin:0 auto;max-width:780px;touch-action:pan-y;user-select:none;-webkit-user-select:none}
 .model::before{content:"";position:absolute;left:12%;right:12%;bottom:6%;height:16%;border-radius:50%;background:radial-gradient(closest-side,rgba(0,0,0,.55),transparent);z-index:-1}
 .model::after{content:"";position:absolute;left:6%;right:6%;bottom:4%;height:1px;background:linear-gradient(90deg,transparent,var(--line-2),transparent)}
 .model img{display:block;width:100%;height:auto;pointer-events:none;-webkit-user-drag:none}
@@ -91,6 +91,7 @@ nav.main .btn{margin-left:.6rem;padding:.6rem 1.1rem}
 /* ---------- Sektionen ---------- */
 section{padding:clamp(3.5rem,8vw,6.5rem) var(--pad);border-top:1px solid var(--line)}
 .hero,.calc-teaser{border-top:0}
+.showcase{padding-block:clamp(1.5rem,4vw,3rem) clamp(2rem,5vw,3.5rem);overflow:hidden}
 .wrap{max-width:1240px;margin:0 auto}
 h2{font-size:clamp(2rem,3.8vw,2.9rem);margin:.7rem 0 1.4rem}
 .eyebrow+h2{margin-top:.8rem}
@@ -231,7 +232,7 @@ footer a:hover{color:var(--text)}
   .facts{grid-template-columns:1fr}.facts div{padding-block:1rem}.facts div+div::before{left:var(--pad);right:var(--pad);top:0;bottom:auto;width:auto;height:1px}
   .cols,.contact .grid{grid-template-columns:1fr}
   .hero{display:block;background:radial-gradient(90% 30% at 50% 12%,rgba(243,211,74,.07),transparent 70%),var(--bg)}
-  .hero .in{padding-block:1rem 2.5rem;grid-template-columns:1fr;grid-template-areas:"model" "txt" "ride";grid-template-rows:auto;row-gap:1.4rem}
+  .hero .in{padding-block:1rem 2.5rem;grid-template-columns:1fr;grid-template-areas:"txt" "ride";grid-template-rows:auto;row-gap:1.4rem}
   .model{margin:0 -4%;max-width:none}.hero .ride{margin-top:.6rem}.hero h1{font-size:clamp(2.3rem,10vw,3.4rem)}
   .sub-cta{display:block;margin:1rem 0 0}
   .stepgrid,.quotes{grid-template-columns:1fr}

@@ -63,6 +63,14 @@
   box.addEventListener('pointerup', end);
   box.addEventListener('pointercancel', end);
 
-  function start() { ('requestIdleCallback' in window) ? requestIdleCallback(load, { timeout: 300 }) : setTimeout(load, 300); }
+  // Das Modell sitzt weiter unten: Bilder erst holen, wenn der Bereich fast im Sichtfeld ist.
+  function start() {
+    if (!('IntersectionObserver' in window)) { load(); return; }
+    var io = new IntersectionObserver(function (e) {
+      if (!e[0].isIntersecting) return;
+      io.disconnect(); load();
+    }, { rootMargin: '800px 0px' });
+    io.observe(box);
+  }
   if (document.readyState === 'complete') start(); else addEventListener('load', start);
 })();
