@@ -24,15 +24,15 @@ const head = ({ title, desc, canonical, schema, css = [] }) => `<!doctype html>
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${canonical}">
-<meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:image" content="${BASE}/img/flotte-1000.jpg"><meta property="og:type" content="website"><meta property="og:url" content="${canonical}">
-<meta name="theme-color" content="#feed01"><link rel="stylesheet" href="/styles.css">${css.map((c) => `<link rel="stylesheet" href="${c}">`).join('')}<link rel="icon" href="/img/logo.svg">
+<meta property="og:title" content="${esc(title)}"><meta property="og:description" content="${esc(desc)}"><meta property="og:image" content="${BASE}/img/og.jpg"><meta property="og:type" content="website"><meta property="og:url" content="${canonical}">
+<meta name="theme-color" content="#1f2023"><link rel="stylesheet" href="/styles.css">${css.map((c) => `<link rel="stylesheet" href="${c}">`).join('')}<link rel="icon" href="/img/logo.svg">
 ${schema.map((s) => `<script type="application/ld+json">${JSON.stringify(s)}</script>`).join('\n')}
 </head>
 <body>
 ${HEADER}`;
 
 const SERVICE = {
-  '@type': 'TaxiService', name: 'Taxi- und Fuhrbetrieb Wilfried Wilck', image: `${BASE}/img/flotte.jpg`, url: `${BASE}/`,
+  '@type': 'TaxiService', name: 'Taxi- und Fuhrbetrieb Wilfried Wilck', image: `${BASE}/img/og.jpg`, url: `${BASE}/`,
   telephone: '+493883723240', email: 'info@taxi-wilck.de',
   address: { '@type': 'PostalAddress', streetAddress: 'Am Hasselsort 4', postalCode: '19230', addressLocality: 'Hagenow', addressCountry: 'DE' },
   geo: { '@type': 'GeoCoordinates', latitude: 53.4249388, longitude: 11.1907434 },
@@ -112,13 +112,13 @@ function renderOrt(o, orte, info = null, ziele = null) {
   return `${head({ title, desc, canonical, schema, css: tabelle ? ['/rechner.css'] : [] })}
 <main id="main">
 <section class="hero" style="padding:0" aria-labelledby="h1">
-  <img src="/img/flotte-1600.jpg" srcset="/img/flotte-1000.jpg 900w, /img/flotte-1600.jpg 1600w, /img/flotte.jpg 3600w" sizes="100vw" width="3600" height="1537" alt="Taxi Wilck: silberner Großraumbus und beiges Taxi vor Wolkenhimmel" fetchpriority="high">
   <div class="in">
     <div class="hero-txt">
       <h1 id="h1"><span data-i18n="p.h1a"${vars({ name: o.name })}>Taxi in ${esc(o.name)}.</span> <b data-i18n="p.h1b">Wir holen Sie ab.</b></h1>
       <p data-i18n="p.hero">Pünktlich und zuverlässig, seit über 30 Jahren ab Hagenow.</p>
       <div><a class="decal" href="${TEL_HREF}" aria-label="Jetzt anrufen: ${TEL}"><span data-i18n="tel.short">Tel.</span><span>03883 72 32 40</span></a></div>
     </div>
+    <div class="model" data-model><img src="/img/modell/t015.webp" width="1400" height="600" alt="Taxi Wilck: Taxi als 3D-Modell" data-i18n-attr="alt:model.alt" fetchpriority="high" draggable="false"></div>
     ${rideForm(abholort)}
   </div>
 </section>

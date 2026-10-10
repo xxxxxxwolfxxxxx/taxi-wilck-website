@@ -11,7 +11,6 @@
     ['/preisrechner.html', 'Preisrechner', 'nav.calc', true],
     ['/#fahrt', 'Fahrt anfragen', 'form.title'],
     ['/#leistungen', 'Leistungen', 'nav.services'],
-    ['/#fahrzeuge', 'Fahrzeuge', 'nav.fleet'],
     ['/#bewertungen', 'Bewertungen', 'nav.reviews'],
     ['/#ueber-uns', 'Über uns', 'nav.about'],
     ['/#kontakt', 'Kontakt', 'nav.contact']

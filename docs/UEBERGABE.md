@@ -37,7 +37,7 @@ Der Zugriff aufs Repository läuft über den GitHub-Account des Auftraggebers. J
 
 **Formulare:** Netlify Forms (`data-netlify`, Honeypot `bot-field`). Formular `fahrt`: abholort, name, telefon, ziel (optional), wann (Sofort/Später), datum, uhrzeit, personen, datenschutz, sprache. Formular `kontakt`: name, email, telefon, nachricht, datenschutz, sprache.
 
-**Mehrsprachigkeit:** Deutsch steht im HTML (SEO). Andere Sprachen kommen clientseitig aus `i18n/<code>.json`, markiert mit `data-i18n`-Attributen. Rückfall: Zielsprache, dann Englisch, dann Deutsch. Vollständig: en, pl, ru, uk, tr, ar. Nur der Bestell-Kern: fr, es, it, nl, cs, hu, ro, bg, el, pt, da, sv.
+**Mehrsprachigkeit:** Deutsch steht im HTML (SEO). Andere Sprachen kommen clientseitig aus `i18n/<code>.json`, markiert mit `data-i18n`-Attributen. Rückfall: Zielsprache, dann Englisch, dann Deutsch. Alle 18 Fremdsprachen sind vollständig (en, pl, ru, uk, tr, ar, fr, es, it, nl, cs, hu, ro, bg, el, pt, da, sv).
 
 **SEO:** Eine statische URL je Ort mit eigenem Title, Description, Canonical, Open Graph, drei JSON-LD-Blöcken (TaxiService, BreadcrumbList, FAQPage), `sitemap.xml` (32 URLs), `robots.txt`. Das Anfrageformular ist auf jeder Ortsseite mit PLZ und Ort vorbelegt.
 
@@ -81,7 +81,7 @@ Diese Punkte sind uns selbst aufgefallen. Am meisten bringt ein Blick auf die er
 | Veröffentlichtes Verzeichnis | `publish = "."` veröffentlicht das ganze Repo. Intern gedachte Pfade (`docs/`, `scripts/`, `tests/`, `README.md`, `package.json`) sind per Redirect in `netlify.toml` gesperrt (404). `i18n/` muss öffentlich bleiben. | Ausgabe nach `public/` verschieben, dann entfallen die Sperren |
 | Preis- und Rechtsaussagen | Der Pflichtfahrgebiet-Test im Preisrechner ist eine Heuristik über Ortsnamenlisten aus der Geocodierung (`ALTKREIS_LWL` in `rechner.js`). Ortsseiten nennen „rund X €“ für bis zu 27 km. | Logik und Wortlaut gegen die Taxenordnung prüfen; Haftungsrisiko mit dem Kunden klären |
 | Mehrsprachigkeit clientseitig | Kurzes Aufblitzen der deutschen Texte beim Laden, Auto-Erkennung der Browsersprache, Fremdsprachen nicht für Google indexierbar. Platzhalter-Werte werden per `innerHTML` eingesetzt, aber vorher escaped. | Entscheiden, ob statische Sprachseiten (`/en/`) nötig sind; `i18n.js` auf XSS-Pfade prüfen |
-| Übersetzungen | Von KI erstellt, nicht von Muttersprachlern geprüft; Rechtstexte bleiben deutsch. | Muttersprachler-Review vor dem Livegang |
+| Übersetzungen | Von KI erstellt und vollständig, aber nicht von Muttersprachlern geprüft; Rechtstexte bleiben deutsch. | Muttersprachler-Review vor dem Livegang |
 | Generator und Vorlagen | Ortsseiten-Markup steckt als JS-Template-Strings in `build-orte.js` (rund 240 Zeilen). Generierte Dateien liegen im Repo, Diffs sind groß. | Ab etwa 100 Orten Eleventy oder Astro mit Build bei Netlify erwägen |
 | Sicherheits-Header | `netlify.toml` setzt nosniff, X-Frame-Options, Referrer-Policy. Keine CSP; Inline-Skripte auf der Startseite verhindern eine strikte CSP ohne Nonces. | CSP ergänzen, Inline-Skripte auslagern |
 | Formular-Spam | Nur Honeypot, kein CAPTCHA, keine Rate-Limits. E-Mail-Benachrichtigung ist im Netlify-Dashboard noch einzurichten. | Benachrichtigung testen, Spam-Filter einschalten |
